@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<title>The Stickers of the temperature</title>
+<link rel="stylesheet" href="full.css">
+</head>
+<body>
+  <h2 class="header">THE STICKERS OF THE TEMPERATURE</h2>
+  <div class="container" id="points"></div>
+  <!-- Trigger/Open The Modal -->
+  <a id="openModal" class="btn-rounded">+</a>
+
+  <div id="addSticker" class="modal">
+    <div class="modal-overlay">
+      <div class="modal-content">
+        <form>
+          <div class="close">&times;</div>
+          <div class="modal-header">✒️Add a stickers</div>
+          <div class="modal-body">
+            <label for="newDate" class="form-label">Date</label>
+            <input id="newDate" type="text" class="form-input input" placeholder="ex: 03/11" /><br />
+            <label for="newColor" class="form-label">Color</label>
+            <select id="newColor" class="form-input" >
+              <option value="blue">Blue</option>
+              <option value="brown">Brown</option>
+              <option value="gold">Gold</option>
+              <option value="green">Green</option>
+              <option value="orange">Orange</option>
+              <option value="pink">Pink</option>
+              <option value="purple">Purple</option>
+              <option value="rainbow">Rainbow</option>
+              <option value="red">Red</option>
+              <option value="teal">Teal</option>
+              <option value="yellow">Yellow</option>
+            </select>
+          </div>
+          <div class="modal-footer">
+            <span id="addNew" class="btn btn-default">Add</span>
+            <button type="reset" class="btn btn-clear">Reset</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $.ajax({ 
+          type: 'GET',
+          contentType: 'application/json',
+          url: 'list.json',
+          success: function (data) {
+            var contenthtml = "";
+            for (var i = 0; i < data.length; i++) {
+              if ((i+1)%5 == 1){
+                contenthtml += '<div class="row"><div class="col-1"></div><div class="col-2"><div class="circle ' + 
+                                data[i].color + '"><div class="text">' + data[i].date + '</div></div></div>';
+              }else if ((i+1)%5 == 0) {
+                contenthtml += '<div class="col-2"><div class="circle ' + data[i].color + '"><div class="text">' + 
+                                data[i].date + '</div></div></div><div class="col-1"></div></div>';
+              }else {
+                contenthtml += '<div class="col-2"><div class="circle ' + data[i].color + '"><div class="text">' + 
+                                data[i].date + '</div></div></div>';
+              }
+            }
+            $("#points").append(contenthtml);
+          },
+          error: function (response) {
+              var r = jQuery.parseJSON(response.responseText);
+              alert("Message: " + r.Message);
+          }
+      });
+    });
+    $('#openModal').click(function () {
+      $('.modal').fadeIn(200);
+    });
+    $('.close').click(function () {
+      $('.modal').fadeOut(200);
+    });
+    $('#addNew').click(function () {
+      var new_date = $('#newDate').val();
+      var new_color = $('#newColor').find(':selected').val();
+      if (new_date == "" || new_color == "") {
+        alert('Please fill up the content!!');
+      }
+      else {
+        $.ajax({  
+            url: "addData.php",  
+            type: "POST",
+            dataType: "json",
+            data: { data : new_date, color : new_color},
+            success: function(data){
+              if (data == 'success'){
+                $('#newDate').val('');
+                $('#newColor').val('');
+              } else {
+                alert('Oops, it is wrong.');
+              }
+            },
+            error: function(response) {
+                alert('Oops, it is wrong.\r\n' + response);
+            }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
