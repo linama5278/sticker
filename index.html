@@ -100,7 +100,8 @@
               }
             },
             error: function(response) {
-                alert('Oops, it is wrong.\r\n' + response);
+              var r = $.parseJSON(response.responseText);
+              alert('Oops, it is wrong.\r\n' + r.Message);
             }
         });
       }
