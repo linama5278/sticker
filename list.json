@@ -40,5 +40,8 @@
     {"date":"04/23","color":"teal"},
     {"date":"04/24","color":"orange"},
     {"date":"04/27","color":"green"},
-    {"date":"04/28","color":"pink"}
+    {"date":"04/28","color":"pink"},
+    {"date":"04/29","color":"blue"},
+    {"date":"04/30","color":"purple"},
+    {"date":"05/01","color":"gold"}
 ]
