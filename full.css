@@ -14,6 +14,22 @@ body {
   font-size: 2.1em;
   font-weight: lighter;
   text-align: center;
+  background-color: #fdfdfd;
+  width: fit-content;
+  padding: 4px 10px;
+}
+.hr {
+  position: absolute;
+  border: 1px solid #333447;
+  z-index: -1;
+  left: 10%;
+  width: 80%;
+}
+.hr-top {
+  top: 40px;
+}
+.hr-bottom {
+  top: 46px;
 }
 .circle {
   width: 100px;
