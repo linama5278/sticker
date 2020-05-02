@@ -26,6 +26,7 @@
             <input id="newDate" type="text" class="form-input input" placeholder="ex: 03/11" /><br />
             <label for="newColor" class="form-label">Color</label>
             <select id="newColor" class="form-input" >
+              <option value="" selected disabled>Choice Color</option>
               <option value="blue">Blue</option>
               <option value="brown">Brown</option>
               <option value="gold">Gold</option>
@@ -93,14 +94,11 @@
             url: "addData.php",  
             type: "POST",
             dataType: "json",
-            data: { data : new_date, color : new_color},
+            data: { data : new_date, color : new_color },
             success: function(data){
-              if (data == 'success'){
-                $('#newDate').val('');
-                $('#newColor').val('');
-              } else {
-                alert('Oops, it is wrong.');
-              }
+              $('#newDate').val('');
+              $('#newColor').val('');
+              $('.modal').fadeOut(200);
             },
             error: function(response) {
               var r = $.parseJSON(response.responseText);
