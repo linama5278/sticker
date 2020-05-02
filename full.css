@@ -87,6 +87,7 @@ a {
 }
 .gold {
   background-color: #e2ca55;
+  background: linear-gradient(135deg, #c9af13 0%, #fff467 30%, #e8db1a 80%, #e8cc29 100%);
 }
 .orange {
   background-color: #ff9817;
