@@ -9,7 +9,9 @@ body {
   background-color: #fdfdfd;
 }
 button,
-a {
+a,
+.btn,
+.close {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 .header {
@@ -175,8 +177,8 @@ a {
 }
 .form-input:focus {
   outline: none;
-  border: 1px solid #80ff66;
-  box-shadow: 0 1px 2px #72f772;
+  border: 1px solid #7c7ba0;
+  box-shadow: 0 1px 2px #bababd;
 }
 .form-label {
   font-family: inherit;
@@ -194,19 +196,22 @@ a {
   font-size: 1em;
   cursor: pointer;
 }
+.btn:focus {
+  outline: none;
+}
 .btn-clear:hover {
-  background-color: #cecece;
-  text-shadow: 0 1px 1px #888;
+  background-color: #d8d8d8;
+  box-shadow: inset 0 2px 0 #bfbfbf;
 }
 .btn-default {
   color: #444;
-  background-color: #91ff3e;
+  background-color: #eff19f;
   text-shadow: 0 1px 1px #ddd;
   padding: 8px 16px;
 }
 .btn-default:hover {
-  background-color: #b0ff56;
-  box-shadow: inset 0 1px 6px #72f772;
+  background-color: #ecea94;
+  box-shadow: inset 0 2px 1px #dcbf7c;
 }
 .btn-rounded {
   position: fixed;
