@@ -48,5 +48,7 @@
     {"date":"05/05","color":"rainbow"},
     {"date":"05/06","color":"red"},
     {"date":"05/07","color":"yellow"},
-    {"date":"05/08","color":"teal"}
+    {"date":"05/08","color":"teal"},
+    {"date":"05/11","color":"pink"},
+    {"date":"05/12","color":"green"}
 ]
