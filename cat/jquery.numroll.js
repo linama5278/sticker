@@ -97,26 +97,17 @@ $(function() {
 	$('.timer').each(count);
 	$('.count-title').removeClass('timer');
 	
+	toastr.options = {
+	  "closeButton": true,
+	  "newestOnTop": false,
+	  "positionClass": "toast-bottom-center",
+	  "onclick": null,
+	  "timeOut": 0,
+	  "tapToDismiss": false
+	}
 	$("#button").on("click", function() {
-		$("#dialog").dialog("open");
+		toastr.success('<p>2020/06/20 聯誼費620</p><p>2020/06/21 借5,000</p><p>2020/06/27 高鐵票1,055</p><p>2020/07/01 借4,000</p><p>2020/07/02 (去尾數-675)</p><p>2020/07/14 借5,000</p>', '<h2>支出明細</h2>');
 	});
-	
-	$("#dialog").dialog({
-		modal: true,
-		autoOpen: false,
-		width: 280,
-		shadow: true,
-		closeText: "關閉",
-		buttons: [
-		{
-		  text: "我知道了",
-		  icon: "ui-icon-heart",
-		  click: function() {
-			$( this ).dialog( "close" );
-		  }
-		}
-	  ]
-    });
 });	
 
 
