@@ -58,5 +58,8 @@
     {"date":"02/23","color":"red"},
     {"date":"02/24","color":"yellow"},
     {"date":"02/25","color":"gold"},
-    {"date":"02/26","color":"rainbow"}
+    {"date":"02/26","color":""},
+    {"date":"03/01","color":"blue"},
+    {"date":"03/02","color":"green"},
+    {"date":"03/03","color":"purple"}
 ]
