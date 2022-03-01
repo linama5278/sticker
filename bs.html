@@ -3,9 +3,10 @@
 <head>
 	<title>Baseball</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="main.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<style>
-		body { margin:0; background-color:#fefdf6; font-size:16px; }
+		body { margin:0; background-color:#fefdf6; font-size:20px; }
 		.header { text-align:center; }
 		.footer { text-align:center; margin-top:5px; }
 		table { width:100%; }
@@ -38,55 +39,57 @@
 				<table border="0">
 					<tbody>
 						<tr>
-							<th>日</th>
-							<th>一</th>
-							<th>二</th>
-							<th>三</th>
-							<th>四</th>
-							<th>五</th>
-							<th>六</th>
+							<th><span class="icon icon-week-sun"></span></th>
+							<th><span class="icon icon-week-mon"></span></th>
+							<th><span class="icon icon-week-tue"></span></th>
+							<th><span class="icon icon-week-web"></span></th>
+							<th><span class="icon icon-week-thr"></span></th>
+							<th><span class="icon icon-week-fri"></span></th>
+							<th><span class="icon icon-week-sat"></span></th>
 						</tr>
 						<tr>
 							<td></td>
 							<td></td>
 							<td></td>
-							<td>🛡️🐵<br />🕐📹</td>
-							<td>🛢️🛡️<br />🕐　<hr />🐘🐵<br />🕐📹</td>
-							<td>🛢️🛡️<br />🕐　</td>
-							<td>🛢️🐘<br />🕐　<hr />🐘🛡️<br />🕐　</td>
+							<td><span class="icon icon-team-fub"></span>
+								<span class="icon icon-team-ruk"></span><br />🕐
+								<span class="icon icon-stm-yt"></span></td>
+							<td><span class="icon icon-team-wei"></span><span class="icon icon-team-fub"></span><br />🕐　<hr /><span class="icon icon-team-bro"></span><span class="icon icon-team-ruk"></span><br />🕐<span class="icon icon-stm-tw"></span></td>
+							<td><span class="icon icon-team-wei"></span><span class="icon icon-team-fub"></span><br />🕐　</td>
+							<td><span class="icon icon-team-wei"></span><span class="icon icon-team-bro"></span><br />🕐　<hr /><span class="icon icon-team-bro"></span><span class="icon icon-team-fub"></span><br />🕐　</td>
 						</tr>
 						<tr>
-							<td>🛢️🐵<br />🕐　<hr />🐘🐵<br />🕐📹</td>
-							<td>🛢️🐵<br />🕐　</td>
-							<td>🛢️🐘<br />🕐　<hr />🛡️😻<br />🕐📺<hr />😻🛡️<br />🕐　</td>
-							<td>🛡️🐻<br />🕐📺<hr />🐵🛢️<br />🕐　<hr />😻🐘<br />🕐　<hr />🐘😻<br />🕐📹</td>
-							<td>🛡️🐵<br />🕐📺</td>
-							<td>🐵🐘<br />🕐📺<hr />😻🐵<br />🕐　</td>
-							<td>🛢️🛡️<br />🕐　</td>
+							<td><span class="icon icon-team-wei"></span><span class="icon icon-team-ruk"></span><br />🕐　<hr /><span class="icon icon-team-bro"></span><span class="icon icon-team-ruk"></span><br />🕐<span class="icon icon-stm-tw"></span></td>
+							<td><span class="icon icon-team-wei"></span><span class="icon icon-team-ruk"></span><br />🕐　</td>
+							<td><span class="icon icon-team-wei"></span><span class="icon icon-team-bro"></span><br />🕐　<hr /><span class="icon icon-team-fub"></span><span class="icon icon-team-lio"></span><br />🕐<span class="icon icon-tv-momo"></span><hr /><span class="icon icon-team-lio"></span><span class="icon icon-team-fub"></span><br />🕐　</td>
+							<td><span class="icon icon-team-fub"></span>🐻<br />🕐<span class="icon icon-tv-momo"></span><hr /><span class="icon icon-team-ruk"></span><span class="icon icon-team-wei"></span><br />🕐　<hr /><span class="icon icon-team-lio"></span><span class="icon icon-team-bro"></span><br />🕐　<hr /><span class="icon icon-team-bro"></span><span class="icon icon-team-lio"></span><br />🕐<span class="icon icon-stm-tw"></span></td>
+							<td><span class="icon icon-team-fub"></span><span class="icon icon-team-ruk"></span><br />🕐<span class="icon icon-tv-momo"></span></td>
+							<td><span class="icon icon-team-ruk"></span><span class="icon icon-team-bro"></span><br />🕐<span class="icon icon-tv-elev"></span><hr /><span class="icon icon-team-lio"></span><span class="icon icon-team-ruk"></span><br />🕐　</td>
+							<td><span class="icon icon-team-wei"></span><span class="icon icon-team-fub"></span><br />🕐　</td>
 						</tr>
 						<tr>
-							<td>🛡️😻<br />🕐📹<hr />🐵🐻<br />🕐　<hr />😻🐘<br />🕐　<hr />🐘🛢️<br />🕐📹</td>
-							<td>🛡️🐘<br />🕐　<hr />🐵😻<br />🕐📹<hr />😻🐵<br />🕐　<hr />🐘🛢️<br />🕐📹</td>
-							<td>🛢️🐵<br />🕐　</td>
-							<td>🛢️😻<br />🕐　<hr />😻🛢️<br />🕐　</td>
-							<td>🛢️🛡️<br />🕐　</td>
+							<td><span class="icon icon-team-fub"></span><span class="icon icon-team-lio"></span><br />🕐<span class="icon icon-stm-tw"></span><hr /><span class="icon icon-team-ruk"></span>🐻<br />🕐　<hr /><span class="icon icon-team-lio"></span><span class="icon icon-team-bro"></span><br />🕐　<hr /><span class="icon icon-team-bro"></span><span class="icon icon-team-wei"></span><br />🕐<span class="icon icon-stm-tw"></span></td>
+							<td><span class="icon icon-team-fub"></span><span class="icon icon-team-bro"></span><br />🕐　<hr /><span class="icon icon-team-ruk"></span><span class="icon icon-team-lio"></span><br />🕐<span class="icon icon-stm-yt"></span><hr /><span class="icon icon-team-lio"></span><span class="icon icon-team-ruk"></span><br />🕐　<hr /><span class="icon icon-team-bro"></span><span class="icon icon-team-wei"></span><br />🕐<span class="icon icon-stm-tw"></span></td>
+							<td><span class="icon icon-team-wei"></span><span class="icon icon-team-ruk"></span><br />🕐　</td>
+							<td><span class="icon icon-team-wei"></span><span class="icon icon-team-lio"></span><br />🕐　<hr /><span class="icon icon-team-lio"></span><span class="icon icon-team-wei"></span><br />🕐　</td>
+							<td><span class="icon icon-team-wei"></span><span class="icon icon-team-fub"></span><br />🕐　</td>
 							<td></td>
-							<td>😻🛢️<br />🕔🟠<hr />🐘🐵<br />🕔🟢</td>
+							<td><span class="icon icon-team-lio"></span><span class="icon icon-team-wei"></span><br />🕔🟠<hr /><span class="icon icon-team-bro"></span><span class="icon icon-team-ruk"></span><br />🕔🟢</td>
 						</tr>
 						<tr>
-							<td>😻🐵<br />🕑🟠<hr />🐘🛡️<br />🕑🟢</td>
+							<td><span class="icon icon-team-lio"></span><span class="icon icon-team-ruk"></span><br />🕑🟠<hr /><span class="icon icon-team-bro"></span><span class="icon icon-team-fub"></span><br />🕑🟢</td>
 							<td></td>
-							<td>🛢️🐵<br />🕡⭕<hr />🛡️🐘<br />🕡🟣</td>
-							<td>🛢️🐘<br />🕡⭕<hr />🛡️😻<br />🕡🟣</td>
-							<td>🛡️🐵<br />🕡🟣<hr />😻🐘<br />🕡🟢</td>
-							<td>🛢️🛡️<br />🕡⭕<hr />😻🐵<br />🕡🟢</td>
-							<td>🛢️😻<br />🕡⭕<hr />🐘🐵<br />🕡🟢</td>
+							<td><span class="icon icon-team-wei"></span><span class="icon icon-team-ruk"></span><br />🕡⭕<hr /><span class="icon icon-team-fub"></span><span class="icon icon-team-bro"></span><br />🕡🟣</td>
+							<td><span class="icon icon-team-wei"></span><span class="icon icon-team-bro"></span><br />🕡⭕<hr /><span class="icon icon-team-fub"></span><span class="icon icon-team-lio"></span><br />🕡🟣</td>
+							<td><span class="icon icon-team-fub"></span><span class="icon icon-team-ruk"></span><br />🕡🟣<hr /><span class="icon icon-team-lio"></span><span class="icon icon-team-bro"></span><br />🕡🟢</td>
+							<td><span class="icon icon-team-wei"></span><span class="icon icon-team-fub"></span><br />🕡⭕<hr /><span class="icon icon-team-lio"></span><span class="icon icon-team-ruk"></span><br />🕡🟢</td>
+							<td><span class="icon icon-team-wei"></span><span class="icon icon-team-lio"></span><br />🕡⭕<hr /><span class="icon icon-team-bro"></span><span class="icon icon-team-ruk"></span><br />🕡🟢</td>
 						</tr>
 						<tr>
 							<td></td>
-							<td>🛢️🐵<br />🕡⭕<hr />🛡️😻<br />🕡🟣</td>
-							<td>🛡️🛢️<br />🕡🟣<hr />🐘😻<br />🕡🟢</td>
-							<td>🛡️🐵<br />🕡🟣<hr />🐘🛢️<br />🕡🟢</td>
+							<td><span class="icon icon-team-wei"></span><span class="icon icon-team-ruk"></span><br />🕡⭕<hr /><span class="icon icon-team-fub"></span><span class="icon icon-team-lio"></span><br />🕡🟣</td>
+							<td><span class="icon icon-team-fub"></span><span class="icon icon-team-wei"></span><br />🕡🟣<hr /><span class="icon icon-team-bro"></span><span class="icon icon-team-lio"></span><br />🕡🟢</td>
+							<td><span class="icon icon-team-fub"></span><span class="icon icon-team-ruk"></span><br />🕡🟣<hr /><span class="icon icon-team-bro"></span><span class="icon icon-team-wei"></span><br />🕡🟢</td>
 							<td></td>
 							<td></td>
 							<td></td>
@@ -154,126 +157,6 @@
 					</tbody>
 				</table>
 			</div>
-			<div id="may">
-				<table border="0">
-					<tbody>
-						<tr>
-							<th>🌙</th>
-							<th>🔥</th>
-							<th>💧</th>
-							<th>🪵</th>
-							<th>🏅</th>
-							<th>🌱</th>
-							<th>☀️</th>
-						</tr>
-						<tr>
-							<td>　　</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td>🐲🐵<br />🕔🔴<hr />👨‍🏭🦁<br />🕔🔵</td>
-							<td>🐲🐘<br />🕑🔴<hr />👨‍🏭🦁<br />🕑🔵</td>
-						</tr>
-						<tr>
-							<td></td>
-							<td>🐵👨‍🏭<br />🕡🟤<hr />🐲🐘<br />🕡🟢</td>
-							<td>🐵👨‍🏭<br />🕡🟤<hr />🐲🦁<br />🕡🟢</td>
-							<td>🐵🐘<br />🕡🟤<hr />🐲🦁<br />🕡🟢</td>
-							<td>🐲🦁<br />🕕🔴<hr />🐘👨‍🏭<br />🕡🟡</td>
-							<td>🐵🦁<br />🕔🟤<hr />🐘👨‍🏭<br />🕔🟡</td>
-							<td>🐵🐲<br />🕑🟤<hr />🐘👨‍🏭<br />🕑🟡</td>
-						</tr>
-						<tr>
-							<td></td>
-							<td>🦁🐘<br />🕡🟠<hr />🐵🐲<br />🕡🟤</td>
-							<td>🦁🐘<br />🕡🟠<hr />🐵👨‍🏭<br />🕡🟤</td>
-							<td>🦁🐲<br />🕡🟠<hr />🐵👨‍🏭<br />🕡🟤</td>
-							<td>🐵👨‍🏭<br />🕡🟤<hr />🐲🐘<br />🕕🔴</td>
-							<td>🦁👨‍🏭<br />🕔🟠<hr />🐲🐘<br />🕔🔴</td>
-							<td>🦁🐵<br />🕔🟠<hr />🐲🐘<br />🕔🔴</td>
-						</tr>
-						<tr>
-							<td></td>
-							<td>👨‍🏭🐲<br />🕡🔵<hr />🦁🐵<br />🕡🟢</td>
-							<td>👨‍🏭🐲<br />🕡🔵</td>
-							<td>👨‍🏭🐵<br />🕡🔵<hr />🦁🐘<br />🕡🟢</td>
-							<td>🦁🐘<br />🕡🟢<hr />🐵🐲<br />🕡🟤</td>
-							<td>👨‍🏭🐘<br />🕔🔵<hr />🐵🐲<br />🕔🟤</td>
-							<td>👨‍🏭🦁<br />🕔🔵<hr />🐵🐲<br />🕔🟤</td>
-						</tr>
-						<tr>
-							<td></td>
-							<td>👨‍🏭🐲<br />🕡🔵<hr />🐵🦁<br />🕡🟤</td>
-							<td>🐵🦁<br />🕡🟤<hr />👨‍🏭🐘<br />🕡🔵</td>
-							<td>🦁🐲<br />🕡🟠</td>
-							<td>🦁👨‍🏭<br />🕡🟠<hr />🐘🐵<br />🕡🟡</td>
-							<td>🦁👨‍🏭<br />🕔🟠<hr />🐘🐵<br />🕔🟡</td>
-							<td>🐵👨‍🏭<br />🕔🟤<hr />🐘🐲<br />🕔🟡</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<div id="jun">
-				<table border="0">
-					<tbody>
-						<tr>
-							<th>🌙</th>
-							<th>🔥</th>
-							<th>💧</th>
-							<th>🪵</th>
-							<th>🏅</th>
-							<th>🌱</th>
-							<th>☀️</th>
-						</tr>
-						<tr>
-							<td>　　</td>
-							<td>🐘🐲<br />🕡🟡<hr />🐵👨‍🏭<br />🕡🟤</td>
-							<td>🦁🐘<br />🕡🟠<hr />🐲🐵<br />🕡⭕</td>
-							<td>👨‍🏭🐵<br />🕡🔵</td>
-							<td>👨‍🏭🐵<br />🕡🔵<hr />🐲🦁<br />🕕🔴</td>
-							<td>👨‍🏭🐘<br />🕔🔵<hr />🐲🦁<br />🕔🔴</td>
-							<td>🦁🐘<br />🕔🟠<hr />🐲🐵<br />🕔🔴</td>
-						</tr>
-						<tr>
-							<td></td>
-							<td>🐲👨‍🏭<br />🕡🟢<hr />🐘🦁<br />🕡🟡</td>
-							<td>🐲👨‍🏭<br />🕡🟢<hr />🐘🦁<br />🕡🟡</td>
-							<td>🐵🐘<br />🕡🟤</td>
-							<td>🐵🐘<br />🕕🟤</td>
-							<td>🐵🦁<br />🕔🟤</td>
-							<td>👨‍🏭🐲<br />🕔🔵</td>
-						</tr>
-						<tr>
-							<td>　<br />　</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>　<br />　</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>　<br />　</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
 			<div class="side">
 				<div class="tag" id="read">📖</div>
 				<div class="desc">
@@ -289,8 +172,6 @@
 	<script>
 		$(document).ready(function () {
 			$("#apr").hide();
-			$("#may").hide();
-			$("#jun").hide();
 			$("#mon").text("🎎");
 			$(".desc").hide();
 			

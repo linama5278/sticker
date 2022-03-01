@@ -1,0 +1,32 @@
+.icon {
+	display: inline-block;
+	vertical-align: middle;
+	margin-top: -0.25em;
+	position: relative;
+	text-indent: -99999px;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	width:24px;
+	height:24px;
+	background-image: url("combo.png");
+}
+
+.icon-team-bro { background-position: 0 0; }
+.icon-team-lio { background-position: -24px 0; }
+.icon-team-ruk { background-position: -48px 0; }
+.icon-team-fub { background-position: -72px 0; }
+.icon-team-wei { background-position: -96px 0; }
+.icon-tv-momo { background-position: 0 -24px; }
+.icon-tv-vlsp { background-position: -24px -24px; }
+.icon-tv-elev { background-position: -48px -24px; }
+.icon-tv-elta { background-position: -72px -24px; }
+.icon-stm-tw { background-position: 0 -48px; }
+.icon-stm-yt { background-position: -24px -48px; }
+.icon-stm-f { background-position: -48px -48px; }
+.icon-week-mon { background-position: 0 -72px; }
+.icon-week-tue { background-position: -24px -72px; }
+.icon-week-web { background-position: -48px -72px; }
+.icon-week-thr { background-position: -72px -72px; }
+.icon-week-fri { background-position: -96px -72px; }
+.icon-week-sat { background-position: -120px -72px; }
+.icon-week-sun { background-position: -144px -72px; }
