@@ -650,6 +650,65 @@
 					</tbody>
 				</table>
 			</div>
+			<div id="jun">
+				<table border="0">
+					<tbody>
+						<tr>
+							<th><span class="icon icon-week-sun"></span></th>
+							<th><span class="icon icon-week-mon"></span></th>
+							<th><span class="icon icon-week-tue"></span></th>
+							<th><span class="icon icon-week-web"></span></th>
+							<th><span class="icon icon-week-thr"></span></th>
+							<th><span class="icon icon-week-fri"></span></th>
+							<th><span class="icon icon-week-sat"></span></th>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>💂🐱<br>🕡🔵<hr />🐘🐵<br>🕡🟡</td>
+							<td>💂🐲<br>🕡🔵<hr />🐘🐵<br>🕡🟡</td>
+							<td>🐘🐵<br>🕔🟡<hr />🐲🐱<br>🕔🔴</td>
+							<td>💂🐵<br>🕔🔵<hr />🐲🐱<br>🕔🔴</td>
+						</tr>
+						<tr>
+							<td>💂🐘<br>🕔🔵<hr />🐲🐱<br>🕔🔴</td>
+							<td></td>
+							<td>🐵🐲<br>🕡🟤<hr />💂🐘<br>🕡🔵</td>
+							<td>🐵🐲<br>🕡🟤<hr />💂🐱<br>🕡🔵</td>
+							<td>🐵🐘<br>🕡🟤<hr />💂🐱<br>🕡🔵</td>
+							<td>💂🐱<br>🕡🔵<hr />🐘🐲<br>🕡🟡</td>
+							<td>🐵🐱<br>🕔🟤<hr />🐘🐲<br>🕔🟡</td>
+						</tr>
+						<tr>
+							<td>🐵💂<br>🕔🔵<hr />🐘🐲<br>🕔🟡</td>
+							<td></td>
+							<td>🐱🐲<br>🕡🟢<hr />🐘🐵<br>🕡🟡</td>
+							<td>🐲🐵<br>🕕🔴<hr />🐘💂<br>🕡🟡</td>
+							<td>🐲🐵<br>🕕🔴</td>
+							<td>🐲🐘<br>🕕🔴<hr />💂🐱<br>🕡🔵</td>
+							<td>🐲🐘<br>🕔🔴<hr />💂🐱<br>🕔🔵</td>
+						<tr>
+							<td>🐱🐘<br>🕔🟠<hr />💂🐵<br>🕔🔵</td>
+							<td></td>
+							<td>💂🐵<br>🕡🔵<hr />🐱🐘<br>🕡🟠</td>
+							<td>🐲💂<br>🕡🟢<hr />🐵🐱<br>🕡🟤</td>
+							<td>🐘🐱<br>🕡🟡</td>
+							<td>🐘🐱<br>🕡🟡<hr />🐵🐲<br>🕡🟤</td>
+							<td>🐘💂<br>🕔🟡<hr />🐵🐲<br>🕔🟤</td>
+						</tr>
+						<tr>
+							<td>🐲💂<br>🕔🔴<hr />🐵🐱<br>🕔🟤</td>
+							<td></td>
+							<td>💂🐲<br>🕡🔵<hr />🐵🐘<br>🕡🟤</td>
+							<td>💂🐲<br>🕡🔵<hr />🐵🐘<br>🕡🟤</td>
+							<td>🐱💂<br>🕡🟠</td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 			<div class="side">
 				<div class="tag" id="read">📖</div>
 				<div class="desc" id="desc">
@@ -666,35 +725,58 @@
 		$(document).ready(function () {
 			$("#mar").hide();
 			$("#may").hide();
+			$("#jun").hide();
 			$("#mon").text("🌸"); //🎎🌸🌷💐
 			$("#desc").hide();
 			
 			$(".prev").click(function () {
+				$(".next").show();
 				if ($("#mon").text() == "🌸") {
 					$("#mar").show();
 					$("#apr").hide();
 					$("#may").hide();
+					$("#jun").hide();
 					$("#mon").text("🎎");
+					$(".prev").hide();
 				}
 				else if ($("#mon").text() == "🌷") {
 					$("#mar").hide();
 					$("#apr").show();
 					$("#may").hide();
+					$("#jun").hide();
 					$("#mon").text("🌸");
+				}
+				else if ($("#mon").text() == "💐") {
+					$("#mar").hide();
+					$("#apr").hide();
+					$("#may").show();
+					$("#jun").hide();
+					$("#mon").text("🌷");
 				}
 			});
 			$(".next").click(function () {
+				$(".prev").show();
 				if ($("#mon").text() == "🎎") {
 					$("#mar").hide();
 					$("#apr").show();
 					$("#may").hide();
+					$("#jun").hide();
 					$("#mon").text("🌸");
 				}
 				else if ($("#mon").text() == "🌸") {
 					$("#mar").hide();
 					$("#apr").hide();
 					$("#may").show();
+					$("#jun").hide();
 					$("#mon").text("🌷");
+				}
+				else if ($("#mon").text() == "🌷") {
+					$("#mar").hide();
+					$("#apr").hide();
+					$("#may").hide();
+					$("#jun").show();
+					$("#mon").text("💐");
+					$(".next").hide();
 				}
 			});
 			
