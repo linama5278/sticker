@@ -790,7 +790,7 @@
 			$("#jun").hide();
 			$("#jul").hide();
 			$("#mon").text("🌷"); //🎎🌸🌷💐🏖️
-			$("#desc").hide();
+			//$("#desc").hide();
 			
 			$(".prev").click(function () {
 				$(".next").show();
@@ -866,7 +866,9 @@
 			});
 			
 			$("#read").click(function() {
-				$("#desc").toggle("slide");
+				//$("#desc").toggle("slide");
+				$('.side').toggleClass('fadeIn');
+				//$('#read').toggleClass('fadeIn');
 			});
 		});
 	</script>

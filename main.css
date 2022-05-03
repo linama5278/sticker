@@ -3,16 +3,17 @@ body { margin:0; background-color:#fefdf6; font-size:18px; }
 .footer { text-align:center; margin-top:5px; }
 table { width:100%; }
 table th, td { text-align:center; padding: 2px; }
-table th { background-color:#d3dcf2; line-height: 2em; }
-table tr { background-color:#ededf2; }
+table th { background-color:#b3e5fc; line-height: 2em; }
+table tr { background-color:#F5F5F6; }
+table tr:nth-child(even) { background-color: #e6ffff; }
 hr { margin:1px 0; border:1px solid #fff; background-color:#fff; }
 .control { height:2em; font-size:1.15em; }
 .title { text-align:center; cursor:default; }
 .prev { float:left; cursor:pointer; }
 .next { float:right; cursor:pointer; }
-.side { position:absolute; text-align:center; top:2em; right:0; color:#fff; cursor:default; }
-.tag { position:absolute; background-color:rgba(0,53,111,.7); left:-2.5em; padding:10px; border-radius:6px 0 0 6px; cursor:pointer; }
-.desc { padding:10px; width:3em; background-color:rgba(0,53,111,.7); border-radius:0 0 0 6px; }
+.side { position:absolute; text-align:center; top:2em; right:0; color:#fff; cursor:default;transition: transform .3s ease-out; transform: translateX(19vw); }
+.tag { position:absolute; background-color:rgba(130,179,201,.7); left:-2.5em; padding:10px; border-radius:6px 0 0 6px; cursor:pointer;}
+.desc { padding:10px; width:3em; background-color:rgba(130,179,201,.7); border-radius:0 0 0 6px;}
 
 .icon { display: inline-block;vertical-align: middle;margin-top: -0.25em;position: relative;text-indent: -99999px;
 	overflow: hidden;background-repeat: no-repeat;width:20px;height:20px;background-image: url("icon.png"); }
@@ -35,3 +36,7 @@ hr { margin:1px 0; border:1px solid #fff; background-color:#fff; }
 .icon-week-fri { background-position: -60px -40px; }
 .icon-week-sat { background-position: -80px -40px; }
 .icon-week-sun { background-position: -80px -60px; }
+
+.fadeIn {
+    transform: translateX(0vw);
+}
