@@ -11,9 +11,9 @@ hr { margin:1px 0; border:1px solid #fff; background-color:#fff; }
 .title { text-align:center; cursor:default; }
 .prev { float:left; cursor:pointer; }
 .next { float:right; cursor:pointer; }
-.side { position:absolute; text-align:center; top:2em; right:0; color:#fff; cursor:default;transition: transform .3s ease-out; transform: translateX(19vw); }
-.tag { position:absolute; background-color:rgba(130,179,201,.7); left:-2.5em; padding:10px; border-radius:6px 0 0 6px; cursor:pointer;}
-.desc { padding:10px; width:3em; background-color:rgba(130,179,201,.7); border-radius:0 0 0 6px;}
+.side { position:fixed; text-align:center; top:2em; right:-4.2em; color:#fff; cursor:default;transition: transform .3s ease-out; }
+.tag { position:absolute; background-color:rgba(130,179,201,.7); left:-43px; padding:10px; border-radius:6px 0 0 6px; cursor:pointer; }
+.desc { padding:10px; width:3em; background-color:rgba(130,179,201,.7); border-radius:0 0 0 6px; }
 
 .icon { display: inline-block;vertical-align: middle;margin-top: -0.25em;position: relative;text-indent: -99999px;
 	overflow: hidden;background-repeat: no-repeat;width:20px;height:20px;background-image: url("icon.png"); }
@@ -37,6 +37,4 @@ hr { margin:1px 0; border:1px solid #fff; background-color:#fff; }
 .icon-week-sat { background-position: -80px -40px; }
 .icon-week-sun { background-position: -80px -60px; }
 
-.fadeIn {
-    transform: translateX(0vw);
-}
+.fadeIn { transform:translateX(-4.2em); }
