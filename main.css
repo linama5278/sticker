@@ -40,3 +40,6 @@ hr { margin:1px 0; border:1px solid #fff; background-color:#fff; }
 .icon-week-sun { background-position: -80px -60px; }
 
 .fadeIn { transform:translateX(-4.2em); }
+@media screen and (min-width: 992px) {
+	.container {width: 30rem;margin: 0 auto;}
+}
