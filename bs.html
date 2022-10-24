@@ -966,6 +966,57 @@
 							<td>💂🐱<br>🕡🔵</td>
 							<td></td>
 							<td></td>
+							<td class="playoff">🐘🐲<br>🕔🟡</td>
+						</tr>
+						<tr>
+							<td class="playoff">🐲🐘<br>🕔🔴</td>
+							<td class="playoff">🐘🐲<br>🕡🟡</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div id="nov">
+				<table border="0">
+					<tbody>
+						<tr>
+							<th>☀</th>
+							<th>🌙</th>
+							<th>🔥</th>
+							<th>💧</th>
+							<th>🌳</th>
+							<th>🪙</th>
+							<th>🪐</th>
+						</tr>
+						<tr>
+							<td></td>
+							<td class="fit"></td>
+							<td class="playoff">🐘🐲<br>🕡🟡</td>
+							<td></td>
+							<td class="fit"></td>
+							<td></td>
+							<td class="ts">🐵👑<br>🟤🕔</td>
+						</tr>
+						<tr>
+							<td class="ts">🐵👑<br>🟤🕔</td>
+							<td></td>
+							<td class="ts">👑🐵<br>❔⏳</td>
+							<td class="ts">👑🐵<br>❔⏳</td>
+							<td></td>
+							<td class="ts">🐵👑<br>🟤🕡</td>
+							<td class="ts">🐵👑<br>🟤🕔</td>
+						</tr>
+						<tr>
+							<td class="ts">🐵👑<br>🟤🕔</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
 							<td></td>
 						</tr>
 					</tbody>
@@ -992,8 +1043,8 @@
 			$("#jul").hide();
 			$("#aug").hide();
 			$("#sep").hide();
-			$("#mon").text("🍂"); //🎎🌸🌷💐🏖️🌴🎑🍂
-			$(".next").hide();
+			$("#nov").hide();
+			$("#mon").text("🍂"); //🎎🌸🌷💐🏖️🌴🎑🍂🎃
 			//$("#desc").hide();
 			
 			$(".prev").click(function () {
@@ -1007,6 +1058,7 @@
 					$("#aug").hide();
 					$("#sep").hide();
 					$("#oct").hide();
+					$("#nov").hide();
 					$("#mon").text("🎎");
 					$(".prev").hide();
 				}
@@ -1019,6 +1071,7 @@
 					$("#aug").hide();
 					$("#sep").hide();
 					$("#oct").hide();
+					$("#nov").hide();
 					$("#mon").text("🌸");
 				}
 				else if ($("#mon").text() == "💐") {
@@ -1030,6 +1083,7 @@
 					$("#aug").hide();
 					$("#sep").hide();
 					$("#oct").hide();
+					$("#nov").hide();
 					$("#mon").text("🌷");
 				}
 				else if ($("#mon").text() == "🏖️") {
@@ -1041,6 +1095,7 @@
 					$("#aug").hide();
 					$("#sep").hide();
 					$("#oct").hide();
+					$("#nov").hide();
 					$("#mon").text("💐");
 				}
 				else if ($("#mon").text() == "🌴") {
@@ -1052,6 +1107,7 @@
 					$("#aug").hide();
 					$("#sep").hide();
 					$("#oct").hide();
+					$("#nov").hide();
 					$("#mon").text("🏖️");
 				}
 				else if ($("#mon").text() == "🎑") {
@@ -1063,6 +1119,7 @@
 					$("#aug").show();
 					$("#sep").hide();
 					$("#oct").hide();
+					$("#nov").hide();
 					$("#mon").text("🌴");
 				}
 				else if ($("#mon").text() == "🍂") {
@@ -1074,7 +1131,20 @@
 					$("#aug").hide();
 					$("#sep").show();
 					$("#oct").hide();
+					$("#nov").hide();
 					$("#mon").text("🎑");
+				}
+				else if ($("#mon").text() == "🎃") {
+					$("#mar").hide();
+					$("#apr").hide();
+					$("#may").hide();
+					$("#jun").hide();
+					$("#jul").hide();
+					$("#aug").hide();
+					$("#sep").hide();
+					$("#oct").show();
+					$("#nov").hide();
+					$("#mon").text("🍂");
 				}
 			});
 			$(".next").click(function () {
@@ -1088,6 +1158,7 @@
 					$("#aug").hide();
 					$("#sep").hide();
 					$("#oct").hide();
+					$("#nov").hide();
 					$("#mon").text("🌸");
 				}
 				else if ($("#mon").text() == "🌸") {
@@ -1099,6 +1170,7 @@
 					$("#aug").hide();
 					$("#sep").hide();
 					$("#oct").hide();
+					$("#nov").hide();
 					$("#mon").text("🌷");
 				}
 				else if ($("#mon").text() == "🌷") {
@@ -1110,6 +1182,7 @@
 					$("#aug").hide();
 					$("#sep").hide();
 					$("#oct").hide();
+					$("#nov").hide();
 					$("#mon").text("💐");
 				}
 				else if ($("#mon").text() == "💐") {
@@ -1121,6 +1194,7 @@
 					$("#aug").hide();
 					$("#sep").hide();
 					$("#oct").hide();
+					$("#nov").hide();
 					$("#mon").text("🏖️");
 				}
 				else if ($("#mon").text() == "🏖️") {
@@ -1132,6 +1206,7 @@
 					$("#aug").show();
 					$("#sep").hide();
 					$("#oct").hide();
+					$("#nov").hide();
 					$("#mon").text("🌴");
 				}
 				else if ($("#mon").text() == "🌴") {
@@ -1143,6 +1218,7 @@
 					$("#aug").hide();
 					$("#sep").show();
 					$("#oct").hide();
+					$("#nov").hide();
 					$("#mon").text("🎑");
 				}
 				else if ($("#mon").text() == "🎑") {
@@ -1154,7 +1230,20 @@
 					$("#aug").hide();
 					$("#sep").hide();
 					$("#oct").show();
+					$("#nov").hide();
 					$("#mon").text("🍂");
+				}
+				else if ($("#mon").text() == "🍂") {
+					$("#mar").hide();
+					$("#apr").hide();
+					$("#may").hide();
+					$("#jun").hide();
+					$("#jul").hide();
+					$("#aug").hide();
+					$("#sep").hide();
+					$("#oct").hide();
+					$("#nov").show();
+					$("#mon").text("🎃");
 					$(".next").hide();
 				}
 			});

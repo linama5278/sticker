@@ -16,6 +16,9 @@ hr { margin:1px 0; border:1px solid #fff; background-color:#fff; }
 .side { position:fixed; text-align:center; top:2em; right:-4.2em; color:#fff; cursor:default;transition: transform .3s ease-out; }
 .tag { position:absolute; background-color:rgba(130,179,201,.8); left:-43px; padding:10px; border-radius:6px 0 0 6px; cursor:pointer; }
 .desc { padding:10px; width:3em; background-color:rgba(130,179,201,.8); border-radius:0 0 0 6px; }
+.playoff { background-color: #d8fff1 !important; }
+.ts { background-color: #faffda !important; }
+.fit { width: 14.3%; }
 
 .icon { display: inline-block;vertical-align: middle;margin-top: -0.25em;position: relative;text-indent: -99999px;
 	overflow: hidden;background-repeat: no-repeat;width:20px;height:20px;background-image: url("icon.png"); }
