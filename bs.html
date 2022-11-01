@@ -1045,216 +1045,226 @@
 			$("#sep").hide();
 			$("#oct").hide();
 			$("#mon").text("🎃"); //🎎🌸🌷💐🏖️🌴🎑🍂🎃
-			//$(".next").show();
+			$(".next").hide();
 			//$("#desc").hide();
 			
 			$(".prev").click(function () {
-				$(".next").show();
-				if ($("#mon").text() == "🌸") {
-					$("#mar").show();
-					$("#apr").hide();
-					$("#may").hide();
-					$("#jun").hide();
-					$("#jul").hide();
-					$("#aug").hide();
-					$("#sep").hide();
-					$("#oct").hide();
-					$("#nov").hide();
-					$("#mon").text("🎎");
-					$(".prev").hide();
-				}
-				else if ($("#mon").text() == "🌷") {
-					$("#mar").hide();
-					$("#apr").show();
-					$("#may").hide();
-					$("#jun").hide();
-					$("#jul").hide();
-					$("#aug").hide();
-					$("#sep").hide();
-					$("#oct").hide();
-					$("#nov").hide();
-					$("#mon").text("🌸");
-				}
-				else if ($("#mon").text() == "💐") {
-					$("#mar").hide();
-					$("#apr").hide();
-					$("#may").show();
-					$("#jun").hide();
-					$("#jul").hide();
-					$("#aug").hide();
-					$("#sep").hide();
-					$("#oct").hide();
-					$("#nov").hide();
-					$("#mon").text("🌷");
-				}
-				else if ($("#mon").text() == "🏖️") {
-					$("#mar").hide();
-					$("#apr").hide();
-					$("#may").hide();
-					$("#jun").show();
-					$("#jul").hide();
-					$("#aug").hide();
-					$("#sep").hide();
-					$("#oct").hide();
-					$("#nov").hide();
-					$("#mon").text("💐");
-				}
-				else if ($("#mon").text() == "🌴") {
-					$("#mar").hide();
-					$("#apr").hide();
-					$("#may").hide();
-					$("#jun").hide();
-					$("#jul").show();
-					$("#aug").hide();
-					$("#sep").hide();
-					$("#oct").hide();
-					$("#nov").hide();
-					$("#mon").text("🏖️");
-				}
-				else if ($("#mon").text() == "🎑") {
-					$("#mar").hide();
-					$("#apr").hide();
-					$("#may").hide();
-					$("#jun").hide();
-					$("#jul").hide();
-					$("#aug").show();
-					$("#sep").hide();
-					$("#oct").hide();
-					$("#nov").hide();
-					$("#mon").text("🌴");
-				}
-				else if ($("#mon").text() == "🍂") {
-					$("#mar").hide();
-					$("#apr").hide();
-					$("#may").hide();
-					$("#jun").hide();
-					$("#jul").hide();
-					$("#aug").hide();
-					$("#sep").show();
-					$("#oct").hide();
-					$("#nov").hide();
-					$("#mon").text("🎑");
-				}
-				else if ($("#mon").text() == "🎃") {
-					$("#mar").hide();
-					$("#apr").hide();
-					$("#may").hide();
-					$("#jun").hide();
-					$("#jul").hide();
-					$("#aug").hide();
-					$("#sep").hide();
-					$("#oct").show();
-					$("#nov").hide();
-					$("#mon").text("🍂");
-				}
+				prev();
 			});
 			$(".next").click(function () {
-				$(".prev").show();
-				if ($("#mon").text() == "🎎") {
-					$("#mar").hide();
-					$("#apr").show();
-					$("#may").hide();
-					$("#jun").hide();
-					$("#jul").hide();
-					$("#aug").hide();
-					$("#sep").hide();
-					$("#oct").hide();
-					$("#nov").hide();
-					$("#mon").text("🌸");
-				}
-				else if ($("#mon").text() == "🌸") {
-					$("#mar").hide();
-					$("#apr").hide();
-					$("#may").show();
-					$("#jun").hide();
-					$("#jul").hide();
-					$("#aug").hide();
-					$("#sep").hide();
-					$("#oct").hide();
-					$("#nov").hide();
-					$("#mon").text("🌷");
-				}
-				else if ($("#mon").text() == "🌷") {
-					$("#mar").hide();
-					$("#apr").hide();
-					$("#may").hide();
-					$("#jun").show();
-					$("#jul").hide();
-					$("#aug").hide();
-					$("#sep").hide();
-					$("#oct").hide();
-					$("#nov").hide();
-					$("#mon").text("💐");
-				}
-				else if ($("#mon").text() == "💐") {
-					$("#mar").hide();
-					$("#apr").hide();
-					$("#may").hide();
-					$("#jun").hide();
-					$("#jul").show();
-					$("#aug").hide();
-					$("#sep").hide();
-					$("#oct").hide();
-					$("#nov").hide();
-					$("#mon").text("🏖️");
-				}
-				else if ($("#mon").text() == "🏖️") {
-					$("#mar").hide();
-					$("#apr").hide();
-					$("#may").hide();
-					$("#jun").hide();
-					$("#jul").hide();
-					$("#aug").show();
-					$("#sep").hide();
-					$("#oct").hide();
-					$("#nov").hide();
-					$("#mon").text("🌴");
-				}
-				else if ($("#mon").text() == "🌴") {
-					$("#mar").hide();
-					$("#apr").hide();
-					$("#may").hide();
-					$("#jun").hide();
-					$("#jul").hide();
-					$("#aug").hide();
-					$("#sep").show();
-					$("#oct").hide();
-					$("#nov").hide();
-					$("#mon").text("🎑");
-				}
-				else if ($("#mon").text() == "🎑") {
-					$("#mar").hide();
-					$("#apr").hide();
-					$("#may").hide();
-					$("#jun").hide();
-					$("#jul").hide();
-					$("#aug").hide();
-					$("#sep").hide();
-					$("#oct").show();
-					$("#nov").hide();
-					$("#mon").text("🍂");
-				}
-				else if ($("#mon").text() == "🍂") {
-					$("#mar").hide();
-					$("#apr").hide();
-					$("#may").hide();
-					$("#jun").hide();
-					$("#jul").hide();
-					$("#aug").hide();
-					$("#sep").hide();
-					$("#oct").hide();
-					$("#nov").show();
-					$("#mon").text("🎃");
-					$(".next").hide();
-				}
-			});
-			
+				next();
+			});			
 			$("#read").click(function() {
 				//$("#desc").toggle("slide");
 				$('.side').toggleClass('fadeIn');
 				//$('#read').toggleClass('fadeIn');
 			});
 		});
+		
+		$(document).keydown(function(e) {
+			if (e.which === 37) prev();
+			if (e.which === 39) next();
+		});
+		function next() {
+			$(".prev").show();
+			if ($("#mon").text() == "🎎") {
+				$("#mar").hide();
+				$("#apr").show();
+				$("#may").hide();
+				$("#jun").hide();
+				$("#jul").hide();
+				$("#aug").hide();
+				$("#sep").hide();
+				$("#oct").hide();
+				$("#nov").hide();
+				$("#mon").text("🌸");
+			}
+			else if ($("#mon").text() == "🌸") {
+				$("#mar").hide();
+				$("#apr").hide();
+				$("#may").show();
+				$("#jun").hide();
+				$("#jul").hide();
+				$("#aug").hide();
+				$("#sep").hide();
+				$("#oct").hide();
+				$("#nov").hide();
+				$("#mon").text("🌷");
+			}
+			else if ($("#mon").text() == "🌷") {
+				$("#mar").hide();
+				$("#apr").hide();
+				$("#may").hide();
+				$("#jun").show();
+				$("#jul").hide();
+				$("#aug").hide();
+				$("#sep").hide();
+				$("#oct").hide();
+				$("#nov").hide();
+				$("#mon").text("💐");
+			}
+			else if ($("#mon").text() == "💐") {
+				$("#mar").hide();
+				$("#apr").hide();
+				$("#may").hide();
+				$("#jun").hide();
+				$("#jul").show();
+				$("#aug").hide();
+				$("#sep").hide();
+				$("#oct").hide();
+				$("#nov").hide();
+				$("#mon").text("🏖️");
+			}
+			else if ($("#mon").text() == "🏖️") {
+				$("#mar").hide();
+				$("#apr").hide();
+				$("#may").hide();
+				$("#jun").hide();
+				$("#jul").hide();
+				$("#aug").show();
+				$("#sep").hide();
+				$("#oct").hide();
+				$("#nov").hide();
+				$("#mon").text("🌴");
+			}
+			else if ($("#mon").text() == "🌴") {
+				$("#mar").hide();
+				$("#apr").hide();
+				$("#may").hide();
+				$("#jun").hide();
+				$("#jul").hide();
+				$("#aug").hide();
+				$("#sep").show();
+				$("#oct").hide();
+				$("#nov").hide();
+				$("#mon").text("🎑");
+			}
+			else if ($("#mon").text() == "🎑") {
+				$("#mar").hide();
+				$("#apr").hide();
+				$("#may").hide();
+				$("#jun").hide();
+				$("#jul").hide();
+				$("#aug").hide();
+				$("#sep").hide();
+				$("#oct").show();
+				$("#nov").hide();
+				$("#mon").text("🍂");
+			}
+			else if ($("#mon").text() == "🍂") {
+				$("#mar").hide();
+				$("#apr").hide();
+				$("#may").hide();
+				$("#jun").hide();
+				$("#jul").hide();
+				$("#aug").hide();
+				$("#sep").hide();
+				$("#oct").hide();
+				$("#nov").show();
+				$("#mon").text("🎃");
+				$(".next").hide();
+			}
+		}
+		function prev() {
+			$(".next").show();
+			if ($("#mon").text() == "🌸") {
+				$("#mar").show();
+				$("#apr").hide();
+				$("#may").hide();
+				$("#jun").hide();
+				$("#jul").hide();
+				$("#aug").hide();
+				$("#sep").hide();
+				$("#oct").hide();
+				$("#nov").hide();
+				$("#mon").text("🎎");
+				$(".prev").hide();
+			}
+			else if ($("#mon").text() == "🌷") {
+				$("#mar").hide();
+				$("#apr").show();
+				$("#may").hide();
+				$("#jun").hide();
+				$("#jul").hide();
+				$("#aug").hide();
+				$("#sep").hide();
+				$("#oct").hide();
+				$("#nov").hide();
+				$("#mon").text("🌸");
+			}
+			else if ($("#mon").text() == "💐") {
+				$("#mar").hide();
+				$("#apr").hide();
+				$("#may").show();
+				$("#jun").hide();
+				$("#jul").hide();
+				$("#aug").hide();
+				$("#sep").hide();
+				$("#oct").hide();
+				$("#nov").hide();
+				$("#mon").text("🌷");
+			}
+			else if ($("#mon").text() == "🏖️") {
+				$("#mar").hide();
+				$("#apr").hide();
+				$("#may").hide();
+				$("#jun").show();
+				$("#jul").hide();
+				$("#aug").hide();
+				$("#sep").hide();
+				$("#oct").hide();
+				$("#nov").hide();
+				$("#mon").text("💐");
+			}
+			else if ($("#mon").text() == "🌴") {
+				$("#mar").hide();
+				$("#apr").hide();
+				$("#may").hide();
+				$("#jun").hide();
+				$("#jul").show();
+				$("#aug").hide();
+				$("#sep").hide();
+				$("#oct").hide();
+				$("#nov").hide();
+				$("#mon").text("🏖️");
+			}
+			else if ($("#mon").text() == "🎑") {
+				$("#mar").hide();
+				$("#apr").hide();
+				$("#may").hide();
+				$("#jun").hide();
+				$("#jul").hide();
+				$("#aug").show();
+				$("#sep").hide();
+				$("#oct").hide();
+				$("#nov").hide();
+				$("#mon").text("🌴");
+			}
+			else if ($("#mon").text() == "🍂") {
+				$("#mar").hide();
+				$("#apr").hide();
+				$("#may").hide();
+				$("#jun").hide();
+				$("#jul").hide();
+				$("#aug").hide();
+				$("#sep").show();
+				$("#oct").hide();
+				$("#nov").hide();
+				$("#mon").text("🎑");
+			}
+			else if ($("#mon").text() == "🎃") {
+				$("#mar").hide();
+				$("#apr").hide();
+				$("#may").hide();
+				$("#jun").hide();
+				$("#jul").hide();
+				$("#aug").hide();
+				$("#sep").hide();
+				$("#oct").show();
+				$("#nov").hide();
+				$("#mon").text("🍂");
+			}
+		}
 	</script>
 </body>
 </html>
