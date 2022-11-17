@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>World Cup</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="main.css">
+	<link rel="icon" href="bicon.png" sizes="16x16 32x32 256x256" type="image/png">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<h1>⚽</h1>
+		</div><!-- /header -->
+
+		<div class="main">
+			<div class="control">
+				<div class="prev">◀️</div>
+				<div class="next">▶️</div>
+				<div class="title" id="mon"></div>
+			</div>
+			<div id="nov">
+				<table border="0">
+					<tbody>
+						<tr>
+							<th>☀</th>
+							<th>🌙</th>
+							<th>🔥</th>
+							<th>💧</th>
+							<th>🌳</th>
+							<th>🪙</th>
+							<th>🪐</th>
+						</tr>
+						<tr>
+							<td>　<br>　</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>　<br>　</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>　<br>　</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>🇶🇦🇪🇨<br>🕛🌅<hr />🏴󠁧󠁢󠁥󠁮󠁧󠁿🇮🇷<br>🕘🌇</td>
+							<td>🇸🇳🇳🇱<br>🕛🌅<hr />🇺🇸🏴󠁧󠁢󠁷󠁬󠁳󠁿<br>🕒🌅<hr />🇦🇷🇸🇦<br>🕕🌇<hr />🇩🇰🇹🇳<br>🕘🌇</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div id="dec">
+				<table border="0">
+					<tbody>
+						<tr>
+							<th>☀</th>
+							<th>🌙</th>
+							<th>🔥</th>
+							<th>💧</th>
+							<th>🌳</th>
+							<th>🪙</th>
+							<th>🪐</th>
+						</tr>
+						<tr>
+							<td></td>
+							<td class="fit"></td>
+							<td></td>
+							<td></td>
+							<td class="fit"></td>
+							<td class="fit"></td>
+							<td class="ts">🐵🐘<br>🟤🕔</td>
+						</tr>
+						<tr>
+							<td class="ts">🐵🐘<br>🟤🕔</td>
+							<td></td>
+							<td class="ts">🐘🐵<br>🟡🕡</td>
+							<td class="ts">🐘🐵<br>🟡🕡</td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>　<br>　</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>🐥🐘<br>🟢🕐</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>🐥🐱<br>🟢🕐</td>
+						</tr>
+						<tr>
+							<td>🐥💂<br>🟢🕐</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>🐥💂<br>🟢🕐</td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div><!-- /content -->
+
+		<div class="footer">
+			<h4>©️2️⃣0️⃣2️⃣2️⃣</h4>
+		</div><!-- /footer -->
+	</div>
+	<script>
+		$(document).ready(function () {
+			$("#dec").hide();
+			$("#mon").text("🎃");
+			$(".prev").hide();
+			
+			$(".prev").click(function () {
+				prev();
+			});
+			$(".next").click(function () {
+				next();
+			});
+		});
+		
+		$(document).keydown(function(e) {
+			if (e.which === 37) prev();
+			if (e.which === 39) next();
+		});
+		function next() {
+			$(".prev").show();
+			if ($("#mon").text() == "🎃") {
+				$("#nov").hide();
+				$("#dec").show();
+				$("#mon").text("⛄");
+				$(".next").hide();
+			}
+		}
+		function prev() {
+			$(".next").show();
+			if ($("#mon").text() == "⛄") {
+				$("#nov").show();
+				$("#dec").hide();
+				$("#mon").text("🎃");
+				$(".prev").hide();
+			}
+		}
+	</script>
+</body>
+</html>
