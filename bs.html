@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="main.css">
 	<link rel="icon" href="bicon.png" sizes="16x16 32x32 256x256" type="image/png">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/swiped-events/1.1.7/swiped-events.min.js" integrity="sha512-q2rGCiN6EL2X7aJwVzSD6E0GbpfcGSjipdpZ12lqArQfSMb/LTDXlSFZLrohrSanuRk2/oP96lb14NNgPCAZPw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
 	<div class="container">
@@ -595,17 +596,9 @@
 	</div>
 	<script>
 		$(document).ready(function () {
-			$("#feb").hide();
-			$("#mar").show();
-			$("#apr").hide();
-			$("#may").hide();
-			$("#jun").hide();
-			$("#jul").hide();
-			$("#aug").hide();
-			$("#sep").hide();
-			$("#oct").hide();
-			$("#mon").text("🎎"); //🧧🎎🌸🌷💐🏖️🌴🎑🍂🎃
 			//$("#desc").hide();
+			setHide();
+			setMain();
 			
 			$(".prev").click(function () {
 				prev();
@@ -620,6 +613,41 @@
 			});
 		});
 		
+		document.addEventListener('swiped-right', function(e) {
+			prev();
+		});
+		document.addEventListener('swiped-left', function(e) {
+			next();
+		});
+
+		function setHide(){
+			$("#feb").hide();
+			$("#mar").hide();
+			$("#apr").hide();
+			$("#may").hide();
+			$("#jun").hide();
+			$("#jul").hide();
+			$("#aug").hide();
+			$("#sep").hide();
+			$("#oct").hide();
+		}
+
+		function setMain(){
+			var currDate = new Date();
+			var mon = currDate.getMonth();
+			var rs = "";
+			if (mon === 1) {$("#feb").show();rs="🧧";}
+			if (mon === 2) {$("#mar").show();rs="🎎";}
+			if (mon === 3) {$("#apr").show();rs="🌸";}
+			if (mon === 4) {$("#may").show();rs="🌷";}
+			if (mon === 5) {$("#jun").show();rs="💐";}
+			if (mon === 6) {$("#jul").show();rs="🏖️";}
+			if (mon === 7) {$("#aug").show();rs="🌴";}
+			if (mon === 8) {$("#sep").show();rs="🎑";}
+			if (mon === 9) {$("#oct").show();rs="🍂";}
+			$("#mon").text(rs);
+		}
+		
 		$(document).keydown(function(e) {
 			if (e.which === 37) prev();
 			if (e.which === 39) next();
@@ -627,98 +655,42 @@
 		function next() {
 			$(".prev").show();
 			if ($("#mon").text() == "🧧") {
-				$("#feb").hide();
+				setHide();
 				$("#mar").show();
-				$("#apr").hide();
-				$("#may").hide();
-				$("#jun").hide();
-				$("#jul").hide();
-				$("#aug").hide();
-				$("#sep").hide();
-				$("#oct").hide();
 				$("#mon").text("🎎");
 			}
 			else if ($("#mon").text() == "🎎"){
-				$("#feb").hide();
-				$("#mar").hide();
+				setHide();
 				$("#apr").show();
-				$("#may").hide();
-				$("#jun").hide();
-				$("#jul").hide();
-				$("#aug").hide();
-				$("#sep").hide();
-				$("#oct").hide();
 				$("#mon").text("🌸");
 			}
 			else if ($("#mon").text() == "🌸"){
-				$("#feb").hide();
-				$("#mar").hide();
-				$("#apr").hide();
+				setHide();
 				$("#may").show();
-				$("#jun").hide();
-				$("#jul").hide();
-				$("#aug").hide();
-				$("#sep").hide();
-				$("#oct").hide();
 				$("#mon").text("🌷");
 			}
 			else if ($("#mon").text() == "🌷"){
-				$("#feb").hide();
-				$("#mar").hide();
-				$("#apr").hide();
-				$("#may").hide();
+				setHide();
 				$("#jun").show();
-				$("#jul").hide();
-				$("#aug").hide();
-				$("#sep").hide();
-				$("#oct").hide();
 				$("#mon").text("💐");
 			}
 			else if ($("#mon").text() == "💐"){
-				$("#feb").hide();
-				$("#mar").hide();
-				$("#apr").hide();
-				$("#may").hide();
-				$("#jun").hide();
+				setHide();
 				$("#jul").show();
-				$("#aug").hide();
-				$("#sep").hide();
-				$("#oct").hide();
 				$("#mon").text("🏖️");
 			}
 			else if ($("#mon").text() == "🏖️"){
-				$("#feb").hide();
-				$("#mar").hide();
-				$("#apr").hide();
-				$("#may").hide();
-				$("#jun").hide();
-				$("#jul").hide();
+				setHide();
 				$("#aug").show();
-				$("#sep").hide();
-				$("#oct").hide();
 				$("#mon").text("🌴");
 			}
 			else if ($("#mon").text() == "🌴"){
-				$("#feb").hide();
-				$("#mar").hide();
-				$("#apr").hide();
-				$("#may").hide();
-				$("#jun").hide();
-				$("#jul").hide();
-				$("#aug").hide();
+				setHide();
 				$("#sep").show();
-				$("#oct").hide();
 				$("#mon").text("🎑");
 			}
 			else if ($("#mon").text() == "🎑"){
-				$("#feb").hide();
-				$("#mar").hide();
-				$("#apr").hide();
-				$("#may").hide();
-				$("#jun").hide();
-				$("#jul").hide();
-				$("#aug").hide();
-				$("#sep").hide();
+				setHide();
 				$("#oct").show();
 				$("#mon").text("🍂");
 				$(".next").hide();
@@ -727,100 +699,44 @@
 		function prev() {
 			$(".next").show();
 			if ($("#mon").text() == "🎎") {
+				setHide();
 				$("#feb").show();
-				$("#mar").hide();
-				$("#apr").hide();
-				$("#may").hide();
-				$("#jun").hide();
-				$("#jul").hide();
-				$("#aug").hide();
-				$("#sep").hide();
-				$("#oct").hide();
 				$("#mon").text("🧧");
 				$(".prev").hide();
 			}
 			else if ($("#mon").text() == "🌸"){
-				$("#feb").hide();
+				setHide();
 				$("#mar").show();
-				$("#apr").hide();
-				$("#may").hide();
-				$("#jun").hide();
-				$("#jul").hide();
-				$("#aug").hide();
-				$("#sep").hide();
-				$("#oct").hide();
 				$("#mon").text("🎎");
 			}
 			else if ($("#mon").text() == "🌷"){
-				$("#feb").hide();
-				$("#mar").hide();
+				setHide();
 				$("#apr").show();
-				$("#may").hide();
-				$("#jun").hide();
-				$("#jul").hide();
-				$("#aug").hide();
-				$("#sep").hide();
-				$("#oct").hide();
 				$("#mon").text("🌸");
 			}
 			else if ($("#mon").text() == "💐"){
-				$("#feb").hide();
-				$("#mar").hide();
-				$("#apr").hide();
+				setHide();
 				$("#may").show();
-				$("#jun").hide();
-				$("#jul").hide();
-				$("#aug").hide();
-				$("#sep").hide();
-				$("#oct").hide();
 				$("#mon").text("🌷");
 			}
 			else if ($("#mon").text() == "🏖️"){
-				$("#feb").hide();
-				$("#mar").hide();
-				$("#apr").hide();
-				$("#may").hide();
+				setHide();
 				$("#jun").show();
-				$("#jul").hide();
-				$("#aug").hide();
-				$("#sep").hide();
-				$("#oct").hide();
 				$("#mon").text("💐");
 			}
 			else if ($("#mon").text() == "🌴"){
-				$("#feb").hide();
-				$("#mar").hide();
-				$("#apr").hide();
-				$("#may").hide();
-				$("#jun").hide();
+				setHide();
 				$("#jul").show();
-				$("#aug").hide();
-				$("#sep").hide();
-				$("#oct").hide();
 				$("#mon").text("🏖️");
 			}
 			else if ($("#mon").text() == "🎑"){
-				$("#feb").hide();
-				$("#mar").hide();
-				$("#apr").hide();
-				$("#may").hide();
-				$("#jun").hide();
-				$("#jul").hide();
+				setHide();
 				$("#aug").show();
-				$("#sep").hide();
-				$("#oct").hide();
 				$("#mon").text("🌴");
 			}
 			else if ($("#mon").text() == "🍂"){
-				$("#feb").hide();
-				$("#mar").hide();
-				$("#apr").hide();
-				$("#may").hide();
-				$("#jun").hide();
-				$("#jul").hide();
-				$("#aug").hide();
+				setHide();
 				$("#sep").show();
-				$("#oct").hide();
 				$("#mon").text("🎑");
 			}
 		}
