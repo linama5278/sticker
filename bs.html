@@ -244,7 +244,7 @@
 							<td>🐘💂‍♂️🕔💛<hr />🐵🐲🕔🤎</td>
 						</tr>
 						<tr>
-							<td>🐘💂‍♂️🕑💛<hr />🐵🐱🕑🤎</td>
+							<td>🐘💂‍♂️🕑💛<hr />🐵🐱🚫🤎</td>
 							<td></td>
 							<td>🐲🐱🕡❤️<hr />💂‍♂️🐘🕡💙</td>
 							<td>🐲🐵🕡❤️<hr />💂‍♂️🐘🕡💙</td>
@@ -337,15 +337,6 @@
 							<td>🐲🐘🕡❤️</td>
 							<td>💂‍♂️🐱🕡💙</td>
 							<td>💂‍♂️🐱🕡💙</td>
-							<td>💂‍♂️🐵🕔💙</td>
-						</tr>
-						<tr>
-							<td>🐘🐲🕔💛</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
 							<td></td>
 						</tr>
 					</tbody>
@@ -364,16 +355,16 @@
 							<th>🪐</th>
 						</tr>
 						<tr>
-							<td>　</td>
+							<td></td>
 							<td class="fit"></td>
 							<td></td>
 							<td></td>
 							<td></td>
 							<td></td>
-							<td></td>
+							<td>💂‍♂️🐵🕔💙</td>
 						</tr>
 						<tr>
-							<td>　</td>
+							<td>🐘🐲🕔💛<hr />🐵🐱🕔🤎</td>
 							<td></td>
 							<td></td>
 							<td></td>
@@ -654,43 +645,36 @@
 		});
 		function next() {
 			$(".prev").show();
+			setHide();
 			if ($("#mon").text() == "🧧") {
-				setHide();
 				$("#mar").show();
 				$("#mon").text("🎎");
 			}
 			else if ($("#mon").text() == "🎎"){
-				setHide();
 				$("#apr").show();
 				$("#mon").text("🌸");
 			}
 			else if ($("#mon").text() == "🌸"){
-				setHide();
 				$("#may").show();
 				$("#mon").text("🌷");
 			}
 			else if ($("#mon").text() == "🌷"){
-				setHide();
 				$("#jun").show();
 				$("#mon").text("💐");
 			}
 			else if ($("#mon").text() == "💐"){
-				setHide();
 				$("#jul").show();
 				$("#mon").text("🏖️");
 			}
 			else if ($("#mon").text() == "🏖️"){
-				setHide();
 				$("#aug").show();
 				$("#mon").text("🌴");
 			}
 			else if ($("#mon").text() == "🌴"){
-				setHide();
 				$("#sep").show();
 				$("#mon").text("🎑");
 			}
 			else if ($("#mon").text() == "🎑"){
-				setHide();
 				$("#oct").show();
 				$("#mon").text("🍂");
 				$(".next").hide();
@@ -698,44 +682,37 @@
 		}
 		function prev() {
 			$(".next").show();
+			setHide();
 			if ($("#mon").text() == "🎎") {
-				setHide();
 				$("#feb").show();
 				$("#mon").text("🧧");
 				$(".prev").hide();
 			}
 			else if ($("#mon").text() == "🌸"){
-				setHide();
 				$("#mar").show();
 				$("#mon").text("🎎");
 			}
 			else if ($("#mon").text() == "🌷"){
-				setHide();
 				$("#apr").show();
 				$("#mon").text("🌸");
 			}
 			else if ($("#mon").text() == "💐"){
-				setHide();
 				$("#may").show();
 				$("#mon").text("🌷");
 			}
 			else if ($("#mon").text() == "🏖️"){
-				setHide();
 				$("#jun").show();
 				$("#mon").text("💐");
 			}
 			else if ($("#mon").text() == "🌴"){
-				setHide();
 				$("#jul").show();
 				$("#mon").text("🏖️");
 			}
 			else if ($("#mon").text() == "🎑"){
-				setHide();
 				$("#aug").show();
 				$("#mon").text("🌴");
 			}
 			else if ($("#mon").text() == "🍂"){
-				setHide();
 				$("#sep").show();
 				$("#mon").text("🎑");
 			}
