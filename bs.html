@@ -577,6 +577,57 @@
 							<td>🐱💂‍♂️🕡💜</td>
 							<td></td>
 							<td></td>
+							<td class="playoff">🐱🐵🕔🧡</td>
+						</tr>
+						<tr>
+							<td class="playoff">🐵🐱🕔🤎</td>
+							<td class="playoff">🐱🐵🕡🧡</td>
+							<td class="playoff">🐱🐵🕡🧡</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div id="nov">
+				<table border="0">
+					<tbody>
+						<tr>
+							<th>☀</th>
+							<th>🌙</th>
+							<th>🔥</th>
+							<th>💧</th>
+							<th>🌳</th>
+							<th>🪙</th>
+							<th>🪐</th>
+						</tr>
+						<tr>
+							<td></td>
+							<td class="fit"></td>
+							<td></td>
+							<td></td>
+							<td class="fit"></td>
+							<td></td>
+							<td class="ts">🐲❓🕔❤️</td>
+						</tr>
+						<tr>
+							<td class="ts">🐲❓🕔❤️</td>
+							<td></td>
+							<td class="ts">❓🐲🕡❓</td>
+							<td class="ts">❓🐲🕡❓</td>
+							<td></td>
+							<td class="ts">🐲❓🕡❤️</td>
+							<td class="ts">🐲❓🕔❤️</td>
+						</tr>
+						<tr>
+							<td class="ts">🐲❓🕔❤️</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
 							<td></td>
 						</tr>
 					</tbody>
@@ -630,6 +681,7 @@
 			$("#aug").hide();
 			$("#sep").hide();
 			$("#oct").hide();
+			$("#nov").hide();
 		}
 
 		function setMain(){
@@ -645,6 +697,7 @@
 			if (mon === 7) {$("#aug").show();rs="🌴";}
 			if (mon === 8) {$("#sep").show();rs="🎑";}
 			if (mon === 9) {$("#oct").show();rs="🍂";}
+			if (mon === 10) {$("#nov").show();rs="🎃";}
 			$("#mon").text(rs);
 		}
 		
@@ -686,10 +739,14 @@
 			else if ($("#mon").text() == "🎑"){
 				$("#oct").show();
 				$("#mon").text("🍂");
-				$(".next").hide();
 			}
 			else if ($("#mon").text() == "🍂"){
-				$("#oct").show();
+				$("#nov").show();
+				$("#mon").text("🎃");
+				$(".next").hide();
+			}
+			else if ($("#mon").text() == "🎃"){
+				$("#nov").show();
 				$(".next").hide();
 			}
 		}
@@ -728,6 +785,10 @@
 			else if ($("#mon").text() == "🍂"){
 				$("#sep").show();
 				$("#mon").text("🎑");
+			}
+			else if ($("#mon").text() == "🎃"){
+				$("#oct").show();
+				$("#mon").text("🍂");
 			}
 		}
 	</script>
