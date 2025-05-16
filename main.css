@@ -11,8 +11,8 @@ hr { margin:1px 0; border:1px solid #e1e1e1; background-color:#e1e1e1; }
 .title { text-align:center; cursor:default; }
 .prev { cursor:pointer; position: absolute; }
 .next { cursor:pointer; position: absolute; right: 0; }
-.side { position:fixed; text-align:center; top:2em; right:-4.2em; color:#fff; cursor:default;transition: transform .3s ease-out; }
-.tag { position:absolute; background-color:rgba(156,156,156,.8); left:-43px; padding:10px; border-radius:6px 0 0 6px; cursor:pointer; }
+.side { position:fixed; display: flex; text-align:center; top:2em; right:-4.2em; color:#fff; cursor:default;transition: transform .3s ease-out; }
+.tag { height: 1.2em; background-color:rgba(156,156,156,.8); padding:10px; border-radius:6px 0 0 6px; cursor:pointer; }
 .desc { padding:10px; width:3em; background-color:rgba(156,156,156,.8); border-radius:0 0 0 6px; }
 .playoff { background-color: #d8fff1 !important; }
 .ts { box-shadow: inset 0 0 10px 0px #ffff87; }
