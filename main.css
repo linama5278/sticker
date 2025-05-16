@@ -7,13 +7,19 @@ table th, td { text-align:center; padding: 2px; }
 table th {  line-height: 2em; }
 table td { border: 1px solid #d6d6d6; }
 hr { margin:1px 0; border:1px solid #e1e1e1; background-color:#e1e1e1; }
+div:focus,
+div:active {
+  outline: none;
+  -webkit-tap-highlight-color: rgba(244,247,199,.5); /* 針對 Android Chrome */
+}
 .control { height:2em; font-size:1.15em; position: relative; }
 .title { text-align:center; cursor:default; }
 .prev { cursor:pointer; position: absolute; }
 .next { cursor:pointer; position: absolute; right: 0; }
-.side { position:fixed; display: flex; text-align:center; top:2em; right:-4.2em; color:#fff; cursor:default;transition: transform .3s ease-out; }
-.tag { height: 1.2em; background-color:rgba(156,156,156,.8); padding:10px; border-radius:6px 0 0 6px; cursor:pointer; }
-.desc { padding:10px; width:3em; background-color:rgba(156,156,156,.8); border-radius:0 0 0 6px; }
+.side { position:fixed; text-align:center; top:2em; right:0; color:#fff; cursor:default;transition: transform .3s ease-out; }
+.menu { position:relative;}
+.tag { position:absolute; right:0; background-color:rgba(156,156,156,.8); padding:10px; border-radius:6px 0 0 6px; cursor:pointer; }
+.desc { position:absolute; left:0; padding:10px; width:3em; background-color:rgba(156,156,156,.8); border-radius:0 0 0 6px; }
 .playoff { background-color: #d8fff1 !important; }
 .ts { box-shadow: inset 0 0 10px 0px #ffff87; }
 .fit { width: 14.3%; }
