@@ -1,5 +1,5 @@
 {
-  "start_url": "bs.html",
+  "start_url": "https://linama5278.github.io/sticker/bs.html",
   "lang": "zh-Hant-TW",
   "name": "Baseball",
   "short_name": "CPBL",
@@ -26,5 +26,5 @@
   ],
   "theme_color": "#f2ba38",
   "background_color": "#ede7da",
-  "display": "browser"
+  "display": "standalone"
 }
