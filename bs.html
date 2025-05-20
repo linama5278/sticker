@@ -7,6 +7,7 @@
 	<link rel="icon" href="bicon.png" sizes="16x16 32x32 256x256" type="image/png">
 	<link rel="manifest" href="site.webmanifest">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/swiped-events/1.1.7/swiped-events.min.js" integrity="sha512-q2rGCiN6EL2X7aJwVzSD6E0GbpfcGSjipdpZ12lqArQfSMb/LTDXlSFZLrohrSanuRk2/oP96lb14NNgPCAZPw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
@@ -796,48 +797,48 @@
 			$(".prev").show();
 			setHide();
 			if ($("#mon").text() == "🧧") {
-				$("#mar").show();
+				$("#mar").show('drop', {direction: 'right'}, 300);
 				$("#mon").text("🎎");
 			}
 			else if ($("#mon").text() == "🎎"){
-				$("#apr").show();
+				$("#apr").show('drop', {direction: 'right'}, 300);
 				$("#mon").text("🌸");
 			}
 			else if ($("#mon").text() == "🌸"){
-				$("#may").show();
+				$("#may").show('drop', {direction: 'right'}, 300);
 				$("#mon").text("🌷");
 			}
 			else if ($("#mon").text() == "🌷"){
-				$("#jun").show();
+				$("#jun").show('drop', {direction: 'right'}, 300);
 				$("#mon").text("💐");
 			}
 			else if ($("#mon").text() == "💐"){
-				$("#jul").show();
+				$("#jul").show('drop', {direction: 'right'}, 300);
 				$("#mon").text("🏖️");
 			}
 			else if ($("#mon").text() == "🏖️"){
-				$("#aug").show();
+				$("#aug").show('drop', {direction: 'right'}, 300);
 				$("#mon").text("🌴");
 			}
 			else if ($("#mon").text() == "🌴"){
-				$("#sep").show();
+				$("#sep").show('drop', {direction: 'right'}, 300);
 				$("#mon").text("🎑");
 			}
 			else if ($("#mon").text() == "🎑"){
-				$("#oct").show();
+				$("#oct").show('drop', {direction: 'right'}, 300);
 				$("#mon").text("🍂");
 			}
 			else if ($("#mon").text() == "🍂"){
-				$("#nov").show();
+				$("#nov").show('drop', {direction: 'right'}, 300);
 				$("#mon").text("🎃");
 			}
 			else if ($("#mon").text() == "🎃"){
-				$("#dec").show();
+				$("#dec").show('drop', {direction: 'right'}, 300);
 				$("#mon").text("⛄");
 				$(".next").hide();
 			}
 			else if ($("#mon").text() == "⛄"){
-				$("#dec").show();
+				$("#dec").show('drop', {direction: 'right'}, 300);
 				$(".next").hide();
 			}
 		}
@@ -845,44 +846,44 @@
 			$(".next").show();
 			setHide();
 			if ($("#mon").text() == "🎎") {
-				$("#feb").show();
+				$("#feb").show('drop', {direction: 'left'}, 300);
 				$("#mon").text("🧧");
 				$(".prev").hide();
 			}
 			else if ($("#mon").text() == "🌸"){
-				$("#mar").show();
+				$("#mar").show('drop', {direction: 'left'}, 300);
 				$("#mon").text("🎎");
 			}
 			else if ($("#mon").text() == "🌷"){
-				$("#apr").show();
+				$("#apr").show('drop', {direction: 'left'}, 300);
 				$("#mon").text("🌸");
 			}
 			else if ($("#mon").text() == "💐"){
-				$("#may").show();
+				$("#may").show('drop', {direction: 'left'}, 300);
 				$("#mon").text("🌷");
 			}
 			else if ($("#mon").text() == "🏖️"){
-				$("#jun").show();
+				$("#jun").show('drop', {direction: 'left'}, 300);
 				$("#mon").text("💐");
 			}
 			else if ($("#mon").text() == "🌴"){
-				$("#jul").show();
+				$("#jul").show('drop', {direction: 'left'}, 300);
 				$("#mon").text("🏖️");
 			}
 			else if ($("#mon").text() == "🎑"){
-				$("#aug").show();
+				$("#aug").show('drop', {direction: 'left'}, 300);
 				$("#mon").text("🌴");
 			}
 			else if ($("#mon").text() == "🍂"){
-				$("#sep").show();
+				$("#sep").show('drop', {direction: 'left'}, 300);
 				$("#mon").text("🎑");
 			}
 			else if ($("#mon").text() == "🎃"){
-				$("#oct").show();
+				$("#oct").show('drop', {direction: 'left'}, 300);
 				$("#mon").text("🍂");
 			}
 			else if ($("#mon").text() == "⛄"){
-				$("#nov").show();
+				$("#nov").show('drop', {direction: 'left'}, 300);
 				$("#mon").text("🎃");
 			}
 		}
