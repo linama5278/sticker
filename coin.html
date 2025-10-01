@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>Coins</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 400px; margin: 20px auto; }
+        .count { font-size: 1.2rem; height: 2.2rem; border: 0; border-top: 1px #ccc solid; border-bottom: 1px #ccc solid; }
+        .btn { font-size: 1.2rem; width: 2.5rem; height: 2.5rem; border: none; color: #fff; background-color: #0d6efd; border-color: #0d6efd; }
+        .btn-plus { margin-right: 0; border-top-left-radius: .25rem; border-bottom-left-radius: .25rem; }
+        .btn-minus { margin-left: 0; border-top-right-radius: .25rem; border-bottom-right-radius: .25rem; }
+        .currency-row { display: flex; align-items: center; margin-bottom: 10px; }
+        .currency-row button { padding: 5px 10px; cursor: pointer; }
+        .currency-row input { width: 60px; text-align: center; }
+        .face-value { width: 50px; text-align: right; font-weight: bold; font-size: 1.2rem; padding-right: .5rem; }
+        #total-display { margin-top: 20px; padding: 10px; border: 1px solid #ccc; font-size: 1.5em; font-weight: bold; background-color: #f0f0f0; border-radius: .25rem; }
+    </style>
+</head>
+<body>
+    <h2>新加坡幣現金餘額追蹤 (SGD)</h2>
+    <div id="coin-counter">
+        <div class="currency-row" data-value="0.1">
+            <span class="face-value">0.1：</span>
+            <button class="btn btn-plus"><i class="fa-solid fa-plus"></i></button>
+            <input class="count" type="number" value="0" min="0" readonly>
+            <button class="btn btn-minus"><i class="fa-solid fa-minus"></i></button>
+        </div>
+        
+        <div class="currency-row" data-value="0.2">
+            <span class="face-value">0.2：</span>
+            <button class="btn btn-plus"><i class="fa-solid fa-plus"></i></button>
+            <input class="count" type="number" value="0" min="0" readonly>
+            <button class="btn btn-minus"><i class="fa-solid fa-minus"></i></button>
+        </div>
+        
+        <div class="currency-row" data-value="0.5">
+            <span class="face-value">0.5：</span>
+            <button class="btn btn-plus"><i class="fa-solid fa-plus"></i></button>
+            <input class="count" type="number" value="0" min="0" readonly>
+            <button class="btn btn-minus"><i class="fa-solid fa-minus"></i></button>
+        </div>
+        
+        <div class="currency-row" data-value="1">
+            <span class="face-value"> 1：</span>
+            <button class="btn btn-plus"><i class="fa-solid fa-plus"></i></button>
+            <input class="count" type="number" value="0" min="0" readonly>
+            <button class="btn btn-minus"><i class="fa-solid fa-minus"></i></button>
+        </div>
+        
+        <div class="currency-row" data-value="2">
+            <span class="face-value"> 2：</span>
+            <button class="btn btn-plus"><i class="fa-solid fa-plus"></i></button>
+            <input class="count" type="number" value="0" min="0" readonly>
+            <button class="btn btn-minus"><i class="fa-solid fa-minus"></i></button>
+        </div>
+        
+        <div class="currency-row" data-value="5">
+            <span class="face-value"> 5：</span>
+            <button class="btn btn-plus"><i class="fa-solid fa-plus"></i></button>
+            <input class="count" type="number" value="0" min="0" readonly>
+            <button class="btn btn-minus"><i class="fa-solid fa-minus"></i></button>
+        </div>
+        
+        <div class="currency-row" data-value="10">
+            <span class="face-value"> 10：</span>
+            <button class="btn btn-plus"><i class="fa-solid fa-plus"></i></button>
+            <input class="count"  type="number" value="0" min="0" readonly>
+            <button class="btn btn-minus"><i class="fa-solid fa-minus"></i></button>
+        </div>
+        
+        <div class="currency-row" data-value="50">
+            <span class="face-value"> 50：</span>
+            <button class="btn btn-plus"><i class="fa-solid fa-plus"></i></button>
+            <input class="count" type="number" value="0" min="0" readonly>
+            <button class="btn btn-minus"><i class="fa-solid fa-minus"></i></button>
+        </div>
+    </div>
+    <div id="total-display">
+        總餘額：SGD 0.00
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 儲存 LocalStorage 數據的 key
+            const STORAGE_KEY = 'sgd_coin_counter_data';
+            
+            const currencyRows = document.querySelectorAll('.currency-row');
+            const totalDisplay = document.getElementById('total-display');
+
+            /**
+             * 從 LocalStorage 載入數據並更新 input 欄位
+             */
+            function loadData() {
+                const savedData = localStorage.getItem(STORAGE_KEY);
+                if (savedData) {
+                    const coinCounts = JSON.parse(savedData);
+                    
+                    currencyRows.forEach(row => {
+                        const faceValue = row.dataset.value;
+                        const countInput = row.querySelector('input[type="number"]');
+                        
+                        // 根據 data-value (面額) 找到對應的儲存數量
+                        if (coinCounts[faceValue] !== undefined) {
+                            countInput.value = coinCounts[faceValue];
+                        }
+                    });
+                }
+            }
+
+            /**
+             * 將當前的 input 數據儲存到 LocalStorage
+             */
+            function saveData() {
+                const coinCounts = {};
+                
+                currencyRows.forEach(row => {
+                    const faceValue = row.dataset.value;
+                    const countInput = row.querySelector('input[type="number"]');
+                    
+                    // 儲存面額及其對應的數量
+                    coinCounts[faceValue] = parseInt(countInput.value) || 0;
+                });
+                
+                // 將 JavaScript 物件轉換成字串並儲存
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(coinCounts));
+            }
+
+            /**
+             * 重新計算並更新總餘額
+             */
+            function calculateTotal() {
+                let totalAmount = 0;
+
+                currencyRows.forEach(row => {
+                    const faceValue = parseFloat(row.dataset.value);
+                    const countInput = row.querySelector('input[type="number"]');
+                    const count = parseInt(countInput.value) || 0; 
+
+                    totalAmount += faceValue * count;
+                });
+
+                // 顯示總金額 (使用 toFixed(2) 確保是兩位小數)
+                totalDisplay.textContent = `總餘額：SGD ${totalAmount.toFixed(2)}`;
+            }
+
+            /**
+             * 處理加減按鈕點擊事件
+             * @param {Event} event - 點擊事件對象
+             */
+            function handleButtonClick(event) {
+                if (!event.target.matches('button')) return;
+
+                const row = event.target.closest('.currency-row');
+                const countInput = row.querySelector('input[type="number"]');
+                
+                let currentCount = parseInt(countInput.value) || 0;
+                
+                if (event.target.classList.contains('btn-plus')) {
+                    // 加號按鈕
+                    currentCount++;
+                } else if (event.target.classList.contains('btn-minus')) {
+                    // 減號按鈕 (確保不低於 0)
+                    if (currentCount > 0) {
+                        currentCount--;
+                    }
+                }
+
+                // 更新 input 的值
+                countInput.value = currentCount;
+
+                // 【新增】：更新數值後，儲存到 LocalStorage
+                saveData();
+
+                // 重新計算總金額
+                calculateTotal();
+            }
+
+            // 1. 頁面載入時，先從 LocalStorage 載入數據
+            loadData();
+            
+            // 2. 設置事件監聽器
+            document.getElementById('coin-counter').addEventListener('click', handleButtonClick);
+
+            // 3. 載入數據後，初始化計算總金額
+            calculateTotal();
+        });
+    </script> 
+</body>
+</html>
