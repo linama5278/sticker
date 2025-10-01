@@ -5,78 +5,77 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <style>
         body { font-family: Arial, sans-serif; max-width: 360px; margin: 20px auto; }
-        .count { font-size: 1.2rem; height: 2.2rem; border: 0; border-top: 1px #ccc solid; border-bottom: 1px #ccc solid; }
-        .btn { font-size: 1.2rem; font-weight: bold; width: 2.5rem; height: 2.5rem; border: none; color: #fff; background-color: #0d6efd; border-color: #0d6efd; }
+        .btn { font-size: 1.6em; font-weight: bold; width: 3rem; height: 3rem; border: none; color: #fff; background-color: #0d6efd; border-color: #0d6efd; }
         .btn-plus { margin-right: 0; border-top-left-radius: .25rem; border-bottom-left-radius: .25rem; }
         .btn-minus { margin-left: 0; border-top-right-radius: .25rem; border-bottom-right-radius: .25rem; }
         .currency-row { display: flex; align-items: center; margin-bottom: 10px; }
         .currency-row button { padding: 5px 10px; cursor: pointer; }
-        .currency-row input { width: 60px; text-align: center; }
-        .face-value { width: 50px; text-align: right; font-weight: bold; font-size: 1.2rem; padding-right: .5rem; }
+        .currency-row input { width: 6rem; text-align: center; font-size: 2.1rem; height: 2.7rem; border: 0; border-top: 1px #ccc solid; border-bottom: 1px #ccc solid;  }
+        .face-value { width: 6rem; text-align: right; font-weight: bold; font-size: 1.8rem; padding-right: .5rem; }
         #total-display { margin-top: 20px; padding: 10px; border: 1px solid #ccc; font-size: 1.5em; font-weight: bold; background-color: #f0f0f0; border-radius: .25rem; }
     </style>
 </head>
 <body>
-    <h2>新加坡幣現金餘額追蹤 (SGD)</h2>
+    <h2>SGD Cash balance</h2>
     <div id="coin-counter">
         <div class="currency-row" data-value="0.1">
             <span class="face-value">0.1：</span>
             <button class="btn btn-plus">＋</button>
-            <input class="count" type="number" value="0" min="0" readonly>
+            <input type="number" value="0" min="0" readonly>
             <button class="btn btn-minus">－</button>
         </div>
         
         <div class="currency-row" data-value="0.2">
             <span class="face-value">0.2：</span>
             <button class="btn btn-plus">＋</button>
-            <input class="count" type="number" value="0" min="0" readonly>
+            <input type="number" value="0" min="0" readonly>
             <button class="btn btn-minus">－</button>
         </div>
         
         <div class="currency-row" data-value="0.5">
             <span class="face-value">0.5：</span>
             <button class="btn btn-plus">＋</button>
-            <input class="count" type="number" value="0" min="0" readonly>
+            <input type="number" value="0" min="0" readonly>
             <button class="btn btn-minus">－</button>
         </div>
         
         <div class="currency-row" data-value="1">
             <span class="face-value"> 1：</span>
             <button class="btn btn-plus">＋</button>
-            <input class="count" type="number" value="0" min="0" readonly>
+            <input type="number" value="0" min="0" readonly>
             <button class="btn btn-minus">－</button>
         </div>
         
         <div class="currency-row" data-value="2">
             <span class="face-value"> 2：</span>
             <button class="btn btn-plus">＋</button>
-            <input class="count" type="number" value="0" min="0" readonly>
+            <input type="number" value="0" min="0" readonly>
             <button class="btn btn-minus">－</button>
         </div>
         
         <div class="currency-row" data-value="5">
             <span class="face-value"> 5：</span>
             <button class="btn btn-plus">＋</button>
-            <input class="count" type="number" value="0" min="0" readonly>
+            <input type="number" value="0" min="0" readonly>
             <button class="btn btn-minus">－</button>
         </div>
         
         <div class="currency-row" data-value="10">
             <span class="face-value"> 10：</span>
             <button class="btn btn-plus">＋</button>
-            <input class="count"  type="number" value="0" min="0" readonly>
+            <input  type="number" value="0" min="0" readonly>
             <button class="btn btn-minus">－</button>
         </div>
         
         <div class="currency-row" data-value="50">
             <span class="face-value"> 50：</span>
             <button class="btn btn-plus">＋</button>
-            <input class="count" type="number" value="0" min="0" readonly>
+            <input type="number" value="0" min="0" readonly>
             <button class="btn btn-minus">－</button>
         </div>
     </div>
     <div id="total-display">
-        總餘額：SGD 0.00
+        Total：SGD 0.00
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -139,7 +138,7 @@
                 });
 
                 // 顯示總金額 (使用 toFixed(2) 確保是兩位小數)
-                totalDisplay.textContent = `總餘額：SGD ${totalAmount.toFixed(2)}`;
+                totalDisplay.textContent = `Total：SGD ${totalAmount.toFixed(2)}`;
             }
 
             /**
