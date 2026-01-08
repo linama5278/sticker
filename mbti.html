@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+</head>
+<body>
+
+<div>
+    <div class="chart ISTJ"></div>
+    <div class="chart ISTP"></div>
+    <div class="chart ESTP"></div>
+    <div class="chart ESTJ"></div>
+	
+    <div class="chart ISFJ"></div>
+    <div class="chart ISFP"></div>
+    <div class="chart ESFP"></div>
+    <div class="chart ESFJ"></div>
+	
+    <div class="chart INFJ"></div>
+    <div class="chart INFP"></div>
+    <div class="chart ENFP"></div>
+    <div class="chart ENFJ"></div>
+	
+    <div class="chart INTJ"></div>
+    <div class="chart INTP"></div>
+    <div class="chart ENTP"></div>
+    <div class="chart ENTJ"></div>
+</div>
+
+<script>
+    const specs = [
+        { rx: 70, ry: 22 },
+        { rx: 55, ry: 22 },
+        { rx: 36, ry: 18 },
+        { rx: 20, ry: 18 }
+    ];
+
+    const posArr = {
+        "left": [ {x: 90, y: 80}, {x: 150, y: 120}, {x: 100, y: 155}, {x: 135, y: 185} ],
+        "right":  [ {x: 150, y: 80}, {x: 90, y: 120}, {x: 140, y: 155}, {x: 105, y: 185} ]
+    };
+
+    const colorArr = {
+        'T': "#00BAEE",
+        'F': "#FF0000",
+        'N': "#92E050",
+        'S': "#FFFF00"
+    };
+
+    const mbitData = {
+        "ISTJ": { functions: ["Sensing    ", "  Thinking", "F", "N"], colors: ["S", "T", "F", "N"], dir: "left" },
+        "ISTP": { functions: ["Thinking    ", "  Sensing", "N", "F"], colors: ["T", "S", "N", "F"], dir: "left" },
+        "ESTP": { functions: ["    Sensing", "Thinking  ", "F", "N"], colors: ["S", "T", "F", "N"], dir: "right" },
+        "ESTJ": { functions: ["    Thinking", "Sensing  ", "N", "F"], colors: ["T", "S", "N", "F"], dir: "right" },
+        "ISFJ": { functions: ["Sensing    ", "  Feeling", "T", "N"], colors: ["S", "F", "T", "N"], dir: "left" },
+        "ISFP": { functions: ["Feeling    ", "  Sensing", "N", "T"], colors: ["F", "S", "N", "T"], dir: "left" },
+        "ESFP": { functions: ["    Sensing", "Feeling  ", "T", "N"], colors: ["S", "F", "T", "N"], dir: "right" },
+        "ESFJ": { functions: ["    Feeling", "Sensing  ", "N", "T"], colors: ["F", "S", "N", "T"], dir: "right" },
+        "INFJ": { functions: ["Intuition    ", "  Feeling", "T", "S"], colors: ["N", "F", "T", "S"], dir: "left" },
+        "INFP": { functions: ["Feeling    ", "  Intuition", "S", "T"], colors: ["F", "N", "S", "T"], dir: "left" },
+        "ENFP": { functions: ["    Intuition", "Feeling  ", "T", "S"], colors: ["N", "F", "T", "S"], dir: "right" },
+        "ENFJ": { functions: ["    Feeling", "Intuition  ", "S", "T"], colors: ["F", "N", "S", "T"], dir: "right" },
+        "INTJ": { functions: ["Intuition    ", "  Thinking", "F", "S"], colors: ["N", "T", "F", "S"], dir: "left" },
+        "INTP": { functions: ["Thinking    ", "  Intuition", "S", "F"], colors: ["T", "N", "S", "F"], dir: "left" },
+        "ENTP": { functions: ["    Intuition", "Thinking  ", "F", "S"], colors: ["N", "T", "F", "S"], dir: "right" },
+        "ENTJ": { functions: ["    Thinking", "Intuition  ", "S", "F"], colors: ["T", "N", "S", "F"], dir: "right" }
+    };
+
+    // 2. 繪圖核心函式 (封裝成一個獨立的 function)
+    function drawToCanvas(canvas, type) {
+        const ctx = canvas.getContext("2d");
+        const data = mbitData[type];
+        if (!data) return;
+
+        const centerX = 120;
+        const coords = posArr[data.dir] || posArr["right"];
+
+        coords.forEach((layer, i) => {
+            const { rx, ry } = specs[i];
+            const colorType = data.colors[i];
+            const fillColor = colorArr[colorType] || "#CCCCCC";
+            
+            ctx.beginPath();
+            ctx.ellipse(layer.x, layer.y, rx, ry, 0, 0, 2 * Math.PI);
+            ctx.fillStyle = fillColor;
+            ctx.fill();
+            ctx.strokeStyle = "black";
+            ctx.stroke();
+            
+            // 文字
+            ctx.fillStyle = "black";
+            ctx.font = "16px Arial";
+            ctx.textAlign = "center";
+            ctx.fillText(data.functions[i], layer.x, layer.y + 5);
+        });
+        
+        ctx.setLineDash([]);
+        // 畫中軸虛線
+        ctx.beginPath();
+        ctx.setLineDash([5, 5]);
+        ctx.moveTo(centerX, 50);
+        ctx.lineTo(centerX, 220);
+        ctx.strokeStyle = "black";
+        ctx.stroke();
+
+        // 畫上方標題
+        ctx.font = "bold 24px Arial";
+        ctx.fillText(type, centerX, 40);
+    }
+
+    // 3. 遍歷所有 div 並執行繪圖
+    document.querySelectorAll('.chart').forEach(div => {
+        const type = Array.from(div.classList).find(cls => cls !== 'chart');
+        
+        if (type && mbitData[type]) {
+            const canvas = document.createElement('canvas');
+            canvas.width = 230;  // 根據你的 div 大小調整
+            canvas.height = 230;
+            div.appendChild(canvas);
+            drawToCanvas(canvas, type);
+        }
+    });
+</script>
+
+</body>
+</html>
