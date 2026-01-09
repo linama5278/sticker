@@ -1,26 +1,98 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>MBTI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <style>
+        body {
+            background-color: #f2fdff;
+        }
+        .chart {
+            width: 45%;
+            height: 300px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding-top: 4rem;
+        }
+        .btns {
+            max-width: 320px;
+            margin: 1rem auto;
+        }
+        .button {
+            display: inline-block;
+            text-decoration: none;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1.5rem;
+            background-color: white;
+            color: #444;
+            padding: 1rem 1.15rem;
+            width: 2rem;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            cursor: pointer;
+            transition: all 0.15s ease-out;
+            margin: .2rem;
+        }
+        .button:hover{
+            background-color: #dadada;
+        }
+        .button.active{
+            border-color: #8adaff;
+            box-shadow: 0 0 4px 2px rgb(128 219 255 / 0.5);
+        }
+        .button.active.success{
+            background-color: #82fd3a;
+        }
+        .button.active.warning{
+            background-color: #ffe921;
+        }
+        .button.active.danger{
+            background-color: #ff3333;
+            color: white;
+        }
+        .button.active.info{
+            background-color: #68baf0;
+        }
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        @media only screen and (max-width: 33.75em) {
+            .chart{
+                width: 90%;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<div>
+<div class="btns">
+    <div class="button success" onclick="showCard('Ni', this)">Ni</div><div class="button success" onclick="showCard('Ne', this)">Ne</div>
+    <div class="button warning" onclick="showCard('Si', this)">Si</div><div class="button warning" onclick="showCard('Se', this)">Se</div>
+    <div class="button danger" onclick="showCard('Fi', this)">Fi</div><div class="button danger" onclick="showCard('Fe', this)">Fe</div>
+    <div class="button info" onclick="showCard('Ti', this)">Ti</div><div class="button info" onclick="showCard('Te', this)">Te</div>
+</div>
+<div class="cards">
     <div class="chart ISTJ"></div>
     <div class="chart ISTP"></div>
     <div class="chart ESTP"></div>
     <div class="chart ESTJ"></div>
-	
+
     <div class="chart ISFJ"></div>
     <div class="chart ISFP"></div>
     <div class="chart ESFP"></div>
     <div class="chart ESFJ"></div>
-	
+
     <div class="chart INFJ"></div>
     <div class="chart INFP"></div>
     <div class="chart ENFP"></div>
     <div class="chart ENFJ"></div>
-	
+
     <div class="chart INTJ"></div>
     <div class="chart INTP"></div>
     <div class="chart ENTP"></div>
@@ -29,10 +101,7 @@
 
 <script>
     const specs = [
-        { rx: 70, ry: 22 },
-        { rx: 55, ry: 22 },
-        { rx: 36, ry: 18 },
-        { rx: 20, ry: 18 }
+        { rx: 70, ry: 22 },{ rx: 55, ry: 22 },{ rx: 36, ry: 18 },{ rx: 20, ry: 18 }
     ];
 
     const posArr = {
@@ -41,10 +110,7 @@
     };
 
     const colorArr = {
-        'T': "#00BAEE",
-        'F': "#FF0000",
-        'N': "#92E050",
-        'S': "#FFFF00"
+        'T': "#16C9FF",'F': "#FF0000",'N': "#8AF133",'S': "#FFFF00"
     };
 
     const mbitData = {
@@ -104,7 +170,7 @@
         ctx.stroke();
 
         // 畫上方標題
-        ctx.font = "bold 24px Arial";
+        ctx.font = "bold 28px Franklin Gothic";
         ctx.fillText(type, centerX, 40);
     }
 
@@ -118,8 +184,33 @@
             canvas.height = 230;
             div.appendChild(canvas);
             drawToCanvas(canvas, type);
+            div.style.display = 'none';
         }
     });
+    const btnList = {
+        "Ni": [".INFJ", ".INTJ"], "Ne": [".ENFP", ".ENTP"], "Si": [".ISTJ", ".ISFJ"], "Se": [".ESTP", ".ESFP"],
+        "Fi": [".ISFP", ".INFP"], "Fe": [".ESFJ", ".ENFJ"], "Ti": [".ISTP", ".INTP"], "Te": [".ESTJ", ".ENTJ"]
+    };
+
+    function showCard(func, btn) {
+        document.querySelectorAll('.button').forEach(b => b.classList.remove('active'));
+        if (btn) btn.classList.add('active');
+
+        document.querySelectorAll('.chart').forEach(div => {
+            div.style.display = 'none';
+        });
+
+        const div = btnList[func];
+
+        if (div) {
+            div.forEach(cls => {
+                const el = document.querySelector(cls);
+                if (el) {
+                    el.style.display = 'block';
+                }
+            });
+        }
+    }
 </script>
 
 </body>
