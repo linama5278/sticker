@@ -5,7 +5,7 @@ body { margin:0; background-color:#fefdf6; font-size:18px; }
 table { width: 100%; border-collapse: collapse; border-radius: 6px; border-style: hidden; box-shadow: inset 0 0 0 1px #c3c3c3; }
 table th, td { text-align:center; padding: 2px; }
 table th {  line-height: 2em; }
-table td { border: 1px solid #d6d6d6; }
+table td { border: 1px solid #d6d6d6; height: 4rem; width: 14.3%; }
 hr { margin:1px 0; border:1px solid #e1e1e1; background-color:#e1e1e1; }
 div:focus,
 div:active {
